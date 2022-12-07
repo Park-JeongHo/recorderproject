@@ -11,7 +11,7 @@
 	</appender>
 	
 	<!-- Application Loggers -->
-	<logger name="com.recorder.pet">
+	<logger name="kr.smhrd.controller">
 		<level value="info" />
 	</logger>
 	

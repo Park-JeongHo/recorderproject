@@ -6,26 +6,22 @@
 		http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd">
 	
 	<!-- Root Context: defines shared resources visible to all other web components -->
-	<!-- DB연결 작업(hikariCP) -->
+	<!-- DB연결작업(HikariCP : 히카리CP)  -->
 	
 	
-	
-	<bean id = "hikariConfig" class = "com.zaxxer.hikari.HikariConfig"> <!-- 객체 생성 태그 -->
-		<property name="driverClassName" value = "com.mysql.jdbc.Driver"/>   <!-- setter와 같은 역할 --> 
-		<property name="jdbcUrl" value = "jdbc:mysql://localhost:3306/com"/>
-		<property name="username" value = "com"/>
-		<property name="password" value = "com01"/>
+	<bean id = "hikariConfig" class="com.zaxxer.hikari.HikariConfig">
+		<property name="driverClassName" value="com.mysql.jdbc.Driver"></property>
+		<property name="jdbcUrl" value="jdbc:mysql://localhost:3306/com"></property>
+		<property name="username" value="com"></property>
+		<property name="password" value="com01"></property>
+	</bean>
+	<bean id = "dataSource" class="com.zaxxer.hikari.HikariDataSource">
+		<constructor-arg ref="hikariConfig"></constructor-arg>
 	</bean>
 	
-	<bean id = "dataSource" class = "com.zaxxer.hikari.HikariDataSource">
-		<constructor-arg ref = "hikariConfig"/> <!-- 생성자 -->
+	<bean class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="dataSource" ref="dataSource"></property>
 	</bean>
-	
-	<bean class = "org.mybatis.spring.SqlSessionFactoryBean">
-		<property name="dataSource" ref = "dataSource"/>
-	</bean>
-	
-	<!-- mapper를 메모리에 자동으로 로딩시키는 것 (spring-jdbc API필요)-->
-	<mybatis-spring:scan base-package = "com.recorder.mapper"/>
-	
+	<!-- mapper를 메모리에 자동으로 로딩시키는것(spring-jdbc) -->
+	<mybatis-spring:scan base-package="kr.smhrd.mapper"></mybatis-spring:scan>
 </beans>
