@@ -64,79 +64,29 @@
 			<div class="btn-group"
 				style="padding-left: 300px; padding-top: 70px;">
 				<button type="button" class="btn btn-outline-primary" onclick="location.href='${cpath}/act.do'">감정분석</button>
-				<button type="button" class="btn btn-outline-primary" onclick="location.href='${cpath}/eye.do'">안구질환</button>
+				<button type="button" class="btn btn-outline-primary active" onclick="location.href='${cpath}/eye.do'">안구질환</button>
 				<button type="button" class="btn btn-outline-primary" onclick="location.href='${cpath}/dtl.do'">상세보기</button>
 				<button type="button" class="btn btn-outline-primary" onclick="location.href='${cpath}/brd.do'">커뮤니티</button>
 				<button type="button" class="btn btn-outline-primary" onclick="location.href='${cpath}/aban.do'">유기동물</button>
 			</div>
 		</div>
 		<div class="divider"></div>
-		<!-- content-1 -->
-		<div>pet news</div>
-		<div class="section 2">
 		
-			<input type="radio" name="slide" id="slide01" checked
-				style="background-color: coral;"> <input type="radio"
-				name="slide" id="slide02" style="background-color: coral;">
-			<input type="radio" name="slide" id="slide03"
-				style="background-color: coral;">
-			<div class="slidewrap">
-
-				<ul class="slidelist">
-					<!-- 슬라이드 영역 -->
-					<li class="slideitem"><a> <img
-							src="${cpath}/resources/img/news1.png">
-					</a></li>
-					<li class="slideitem"><a> <img
-							src="${cpath}/resources/img/news2.png">
-					</a></li>
-					<li class="slideitem"><a> <img
-							src="${cpath}/resources/img/news1.png">
-					</a></li class="slideitem">
-
-					<!-- 좌,우 슬라이드 버튼 -->
-					<div class="slide-control">
-						<div>
-							<label for="slide03" class="left"><img
-								src="${cpath}/resources/img/left.png"
-								style="position: fixed; width: 50%; height: 50%; right: 240px; top: 180px;"></label>
-							<label for="slide02" class="right"><img
-								src="${cpath}/resources/img/right.png"
-								style="position: fixed; width: 50%; height: 50%; left: 240px; top: 180px;"></label>
-						</div>
-						<div>
-							<label for="slide01" class="left"><img
-								src="${cpath}/resources/img/left.png"
-								style="position: fixed; width: 50%; height: 50%; right: 240px; top: 180px;"></label>
-							<label for="slide03" class="right"><img
-								src="${cpath}/resources/img/right.png"
-								style="position: fixed; width: 50%; height: 50%; left: 240px; top: 180px;"></label>
-						</div>
-						<div>
-							<label for="slide02" class="left"><img
-								src="${cpath}/resources/img/left.png"
-								style="position: fixed; width: 50%; height: 50%; right: 240px; top: 180px;"></label>
-							<label for="slide01" class="right"><img
-								src="${cpath}/resources/img/right.png"
-								style="position: fixed; width: 50%; height: 50%; left: 240px; top: 180px;"></label>
-						</div>
-					</div>
-
-				</ul>
-				<!-- 페이징 -->
-				<ul class="slide-pagelist">
-					<li><label for="slide01"></label></li>
-					<li><label for="slide02"></label></li>
-					<li><label for="slide03"></label></li>
-				</ul>
-			</div>
-
-
+		<div class="section 2">
+		<div>
+		
+	
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		</div>
-		<!-- content-2 -->
-		<div class="divider"></div>
-		<div class="section 3">
-			<jsp:include page="bottom.jsp"></jsp:include>
+		
 
 		</div>
 
@@ -201,4 +151,5 @@
 
 
 </body>
+
 </html>
