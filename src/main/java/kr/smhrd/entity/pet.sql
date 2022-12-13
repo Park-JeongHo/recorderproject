@@ -1,7 +1,7 @@
 select * from TBL_USER
 
 insert into TBL_USER
-values('admin','1234','관리자','smhrd@smhrd.com',sysdate,'1');
+values('admin1','admin1','관리자','smhrd@smhrd.com',sysdate,'1');
 insert into TBL_USER
 values('user1','1234','회원','user01@smhrd.com',sysdate,'0');
 insert into TBL_USER
