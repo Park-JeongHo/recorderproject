@@ -21,14 +21,25 @@ public class TblUserController {
 		if (m != null) {
 			// 회원인증에 성공~
 			session.setAttribute("m", m); // ${m}
+			return "redirect:/home.do";
+		}else {
+			return "redirect:/main.do";
 		}
+		//System.out.println(m.getUser_name());
+		
 
-		return "redirect:/home.do";
 	}
 
 	@RequestMapping("/logout.do")
 	public String logout(HttpSession session) {
 		session.invalidate();
+
+		return "redirect:/main.do";
+
+	}
+	@RequestMapping("/join.do")
+	public String join(TblUser vo) {
+		tblUserMapper.join(vo);
 
 		return "redirect:/main.do";
 

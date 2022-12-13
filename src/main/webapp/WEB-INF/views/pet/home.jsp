@@ -40,8 +40,7 @@
 <!-- Latest compiled JavaScript -->
 <script
 	src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-<script
-	src="https://cdn.jsdelivr.net/npm/jquery@3.6.1/dist/jquery.slim.min.js"></script>
+
 <script
 	src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
 <script
@@ -52,29 +51,53 @@
 	src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
 
+
 <title>복실복실</title>
 <body style="background: linear-gradient(to right, #FFAFBD, #ffc3a0);">
-
+	
 	<div class="container">
 		<div class="divider"></div>
 		<!-- header -->
 		<div class="section 1">
-			<a href="${cpath}/home.do"><img src="${cpath}/resources/img/logo.png"
-				style="width: 100px;"></a>
+			<a href="${cpath}/home.do"><img
+				src="${cpath}/resources/img/logo.png" style="width: 100px;"></a>
 			<div class="btn-group"
 				style="padding-left: 300px; padding-top: 70px;">
-				<button type="button" class="btn btn-outline-primary" onclick="location.href='${cpath}/act.do'">감정분석</button>
-				<button type="button" class="btn btn-outline-primary" onclick="location.href='${cpath}/eye.do'">안구질환</button>
-				<button type="button" class="btn btn-outline-primary" onclick="location.href='${cpath}/dtl.do'">상세보기</button>
-				<button type="button" class="btn btn-outline-primary" onclick="location.href='${cpath}/brd.do'">커뮤니티</button>
-				<button type="button" class="btn btn-outline-primary" onclick="location.href='${cpath}/aban.do'">유기동물</button>
+				<button type="button" class="btn"
+					onclick="location.href='${cpath}/act.do'">감정분석</button>
+				<button type="button" class="btn"
+					onclick="location.href='${cpath}/eye.do'">안구질환</button>
+				<button type="button" class="btn"
+					onclick="location.href='${cpath}/dtl.do'">상세보기</button>
+				<button type="button" class="btn"
+					onclick="location.href='${cpath}/brd.do'">커뮤니티</button>
+				<button type="button" class="btn"
+					onclick="location.href='${cpath}/aban.do'">유기동물</button>
 			</div>
+
+
+			<div class="dropdown" style="float: right; margin-top: 35px;">
+				<button type="button" class="btn btn-info btn-sm dropdown-toggle"
+					data-toggle="dropdown" style="border-radius: 50px; height: auto;">info</button>
+				<div class="dropdown-menu">
+					<a class="dropdown-item" href="#">검사기록실</a> <a
+						class="dropdown-item" href="${cpath}/logout.do">로그아웃</a>
+				</div>
+			</div>
+			<div class="chip"
+				style="float: right; margin-top: 35px; background: beige;">
+				<img src="${cpath}/resources/img/pf.png" alt="Contact Person">
+				${m.user_name}님 환영합니다
+			</div>
+
+
 		</div>
+
 		<div class="divider"></div>
 		<!-- content-1 -->
 		<div>pet news</div>
 		<div class="section 2">
-		
+
 			<input type="radio" name="slide" id="slide01" checked
 				style="background-color: coral;"> <input type="radio"
 				name="slide" id="slide02" style="background-color: coral;">
@@ -161,8 +184,9 @@
 					<div class="widget">
 						<h3>Find Us</h3>
 						<ul class="list-unstyled float-start links">
-							<li><지도></li>
-
+							<li>
+								<img id="map" src="${cpath}/resources/img/map.PNG" style="width: 360px; height: 220px; border: solid 1px;">
+							</li>
 						</ul>
 
 					</div>

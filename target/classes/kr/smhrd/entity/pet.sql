@@ -7,5 +7,7 @@ values('user1','1234','회원','user01@smhrd.com',sysdate,'0');
 insert into TBL_USER
 values('user2','1234','회원','user02@smhrd.com',sysdate,'0');
 
-select * from tbl_aban
+select * from tbl_aban where aban_seq = 0
+
+select * from tbl_user where user_id = 'admin' and user_pw = '1234'
 commit

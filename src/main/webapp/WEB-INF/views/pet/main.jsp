@@ -35,17 +35,17 @@
                     <button type="button" class="togglebtn" onclick="register()">REGISTER</button>
                 </div>
                 
-                <form id="login" action="${cpath}/login.do" class="input-group">
-                    <input type="text" class="input-field" id="user_id" placeholder="User name or Email" required>
-                    <input type="password" class="input-field" id="user_pw" placeholder="Enter Password" required>
+                <form id="login" action="${cpath}/login.do" method="post" class="input-group">
+                    <input type="text" id="user_id" name="user_id" class="input-field"  placeholder="User name or Email" required>
+                    <input type="password" id="user_pw" name="user_pw" class="input-field"  placeholder="Enter Password" required>
                     <input type="checkbox" class="checkbox"><span>Remember Password</span>
                     <button class="submit">Login</button>
                 </form>
-                <form id="register" action="${cpath}/join.do" class="input-group">
-                    <input type="text" class="input-field" id="user_id" placeholder="User Id" required>
-                    <input type="email" class="input-field" id="user_email" placeholder="Your Email" required>
-                    <input type="text" class="input-field" id="user_name" placeholder="Your NickName" required>
-                    <input type="password" class="input-field" id="user_pw" placeholder="Enter Password" required>
+                <form id="register" action="${cpath}/join.do" method="post" class="input-group">
+                    <input type="text" class="input-field" id="user_id" name="user_id" placeholder="User Id" required>
+                    <input type="email" class="input-field" id="user_email" name="user_email" placeholder="Your Email" required>
+                    <input type="text" class="input-field" id="user_name" name="user_name" placeholder="Your NickName" required>
+                    <input type="password" class="input-field" id="user_pw" name="user_pw" placeholder="Enter Password" required>
                     <input type="checkbox" class="checkbox"><span>Terms and conditions</span>
                     <button class="submit">REGISTER</button>
                 </form>

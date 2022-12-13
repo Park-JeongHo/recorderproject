@@ -63,11 +63,23 @@
 				style="width: 100px;"></a>
 			<div class="btn-group"
 				style="padding-left: 300px; padding-top: 70px;">
-				<button type="button" class="btn btn-outline-primary" onclick="location.href='${cpath}/act.do'">감정분석</button>
-				<button type="button" class="btn btn-outline-primary" onclick="location.href='${cpath}/eye.do'">안구질환</button>
-				<button type="button" class="btn btn-outline-primary" onclick="location.href='${cpath}/dtl.do'">상세보기</button>
-				<button type="button" class="btn btn-outline-primary active" onclick="location.href='${cpath}/brd.do'">커뮤니티</button>
-				<button type="button" class="btn btn-outline-primary" onclick="location.href='${cpath}/aban.do'">유기동물</button>
+				<button type="button" class="btn" onclick="location.href='${cpath}/act.do'">감정분석</button>
+				<button type="button" class="btn" onclick="location.href='${cpath}/eye.do'">안구질환</button>
+				<button type="button" class="btn" onclick="location.href='${cpath}/dtl.do'">상세보기</button>
+				<button type="button" class="btn btn-outline-info active" onclick="location.href='${cpath}/brd.do'">커뮤니티</button>
+				<button type="button" class="btn" onclick="location.href='${cpath}/aban.do'">유기동물</button>
+			</div>
+			<div class="dropdown" style="float: right; margin-top: 35px;">
+				<button type="button" class="btn btn-info btn-sm dropdown-toggle"
+					data-toggle="dropdown" style="border-radius: 50px; height: auto;">info</button>
+				<div class="dropdown-menu">
+					<a class="dropdown-item" href="#">검사기록실</a> <a
+						class="dropdown-item" href="${cpath}/logout.do">로그아웃</a>
+				</div>
+			</div>
+			<div class="chip" style="float: right; margin-top: 35px; background: beige;">
+				<img src="${cpath}/resources/img/pf.png" alt="Contact Person">
+				${m.user_name}님 환영합니다
 			</div>
 		</div>
 		<div class="divider"></div>
@@ -100,7 +112,7 @@
 					<div class="widget">
 						<h3>Find Us</h3>
 						<ul class="list-unstyled float-start links">
-							<li><지도></li>
+							<li><img id="map" src="${cpath}/resources/img/map.PNG" style="width: 360px; height: 220px; border: solid 1px;"></li>
 
 						</ul>
 

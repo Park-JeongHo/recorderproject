@@ -7,176 +7,102 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <!-- Swiper CSS -->
-    <link
-  rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
-/>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+<!-- Swiper CSS -->
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="${cpath}/resources/css/bottom.css">
+<!-- CSS -->
+<link rel="stylesheet" href="${cpath}/resources/css/bottom.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function(){
+		randomAbanList();  // 가장먼저 실행함수
+	});
+	function randomAbanList(){
+		// 게시판 리스트 가져오기
+		$.ajax({
+			url : "${cpath}/randomAbanList.do",
+			type : "get",
+			dataType : "json",
+			success : AbanList,
+			error : function(){alert("error");}
+		});
+	}
+	function AbanList(data) {
+		var bList ="<div class='slide-content'>";
+		bList +="<div class='card-wrapper swiper-wrapper'>";
+	$.each(data, function(index, obj){ 
+		bList +="<div class='card swiper-slide'>";
+	 	bList +="<div class='image-content'>";
+		bList +="<span class='overlay'></span>";
+		bList +="<div class='card-image'>";
+		bList +="<img src='${cpath}/resources/img/abanpet/"+obj.aban_img+".jpg' class='card-img' style='border-radius: 50%;'>";
+		bList +="</div>";
+		bList +="</div>";
+		bList +="<div class='card-content'>";
+		bList +="<p class='description'>"+obj.aban_area+"</p>";
+		bList +="<p class='description'>"+obj.aban_gender+"</p>";
+		bList +="<p class='description'>"+obj.aban_vrty+"</p>";
+		bList +="<button class='button'>View More</button>";
+		bList +="</div>";
+		bList +="</div>";
+		});
+		bList+="</div>";
+		bList+="</div>";
+		bList+="<div class='swiper-button-next swiper-navBtn'></div>"
+		bList+="<div class='swiper-button-prev swiper-navBtn'></div>"
+		bList+="<div class='swiper-pagination'></div>"
+		$(".swiper").html(bList);
+		var swiper = new Swiper(".slide-content", {
+		    slidesPerView: 3,
+		    spaceBetween: 25,
+		    loop: true,
+		    centerSlide: 'true',
+		    fade: 'true',
+		    grabCursor: 'true',
+		    pagination: {
+		      el: ".swiper-pagination",
+		      clickable: true,
+		      dynamicBullets: true,
+		    },
+		    navigation: {
+		      nextEl: ".swiper-button-next",
+		      prevEl: ".swiper-button-prev",
+		    },
 
-    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+		    breakpoints:{
+		        0: {
+		            slidesPerView: 1,
+		        },
+		        520: {
+		            slidesPerView: 2,
+		        },
+		        950: {
+		            slidesPerView: 3,
+		        },
+		    },
+		  });
+	}
+	
+	
+	
+	</script>
 </head>
 <body>
-    <div class="slide-container swiper">
-        <div class="slide-content">
-            <div class="card-wrapper swiper-wrapper">
-                <div class="card swiper-slide">
-                    <div class="image-content">
-                        <span class="overlay"></span>
+	<div>지금 가족이 되어주세요</div>
+	<div class="slide-container swiper">
 
-                        <div class="card-image">
-                            <!--<img src="images/profile1.jpg" alt="" class="card-img">-->
-                        </div>
-                    </div>
 
-                    <div class="card-content">
-                        <h2 class="name">David Dell</h2>
-                        <p class="description">The lorem text the section that contains header with having open functionality. Lorem dolor sit amet consectetur adipisicing elit.</p>
-
-                        <button class="button">View More</button>
-                    </div>
-                </div>
-                <div class="card swiper-slide">
-                    <div class="image-content">
-                        <span class="overlay"></span>
-
-                        <div class="card-image">
-                            <!--<img src="images/profile2.jpg" alt="" class="card-img">-->
-                        </div>
-                    </div>
-
-                    <div class="card-content">
-                        <h2 class="name">David Dell</h2>
-                        <p class="description">The lorem text the section that contains header with having open functionality. Lorem dolor sit amet consectetur adipisicing elit.</p>
-
-                        <button class="button">View More</button>
-                    </div>
-                </div>
-                <div class="card swiper-slide">
-                    <div class="image-content">
-                        <span class="overlay"></span>
-
-                        <div class="card-image">
-                            <!--<img src="images/profile3.jpg" alt="" class="card-img">-->
-                        </div>
-                    </div>
-
-                    <div class="card-content">
-                        <h2 class="name">David Dell</h2>
-                        <p class="description">The lorem text the section that contains header with having open functionality. Lorem dolor sit amet consectetur adipisicing elit.</p>
-
-                        <button class="button">View More</button>
-                    </div>
-                </div>
-                <div class="card swiper-slide">
-                    <div class="image-content">
-                        <span class="overlay"></span>
-
-                        <div class="card-image">
-                            <!--<img src="images/profile4.jpg" alt="" class="card-img">-->
-                        </div>
-                    </div>
-
-                    <div class="card-content">
-                        <h2 class="name">David Dell</h2>
-                        <p class="description">The lorem text the section that contains header with having open functionality. Lorem dolor sit amet consectetur adipisicing elit.</p>
-
-                        <button class="button">View More</button>
-                    </div>
-                </div>
-                <div class="card swiper-slide">
-                    <div class="image-content">
-                        <span class="overlay"></span>
-
-                        <div class="card-image">
-                            <!--<img src="images/profile5.jpg" alt="" class="card-img">-->
-                        </div>
-                    </div>
-
-                    <div class="card-content">
-                        <h2 class="name">David Dell</h2>
-                        <p class="description">The lorem text the section that contains header with having open functionality. Lorem dolor sit amet consectetur adipisicing elit.</p>
-
-                        <button class="button">View More</button>
-                    </div>
-                </div>
-                <div class="card swiper-slide">
-                    <div class="image-content">
-                        <span class="overlay"></span>
-
-                        <div class="card-image">
-                            <!--<img src="images/profile6.jpg" alt="" class="card-img">-->
-                        </div>
-                    </div>
-
-                    <div class="card-content">
-                        <h2 class="name">David Dell</h2>
-                        <p class="description">The lorem text the section that contains header with having open functionality. Lorem dolor sit amet consectetur adipisicing elit.</p>
-
-                        <button class="button">View More</button>
-                    </div>
-                </div>
-                <div class="card swiper-slide">
-                    <div class="image-content">
-                        <span class="overlay"></span>
-
-                        <div class="card-image">
-                            <!--<img src="images/profile7.jpg" alt="" class="card-img">-->
-                        </div>
-                    </div>
-
-                    <div class="card-content">
-                        <h2 class="name">David Dell</h2>
-                        <p class="description">The lorem text the section that contains header with having open functionality. Lorem dolor sit amet consectetur adipisicing elit.</p>
-
-                        <button class="button">View More</button>
-                    </div>
-                </div>
-                <div class="card swiper-slide">
-                    <div class="image-content">
-                        <span class="overlay"></span>
-
-                        <div class="card-image">
-                            <!--<img src="images/profile8.jpg" alt="" class="card-img">-->
-                        </div>
-                    </div>
-
-                    <div class="card-content">
-                        <h2 class="name">David Dell</h2>
-                        <p class="description">The lorem text the section that contains header with having open functionality. Lorem dolor sit amet consectetur adipisicing elit.</p>
-
-                        <button class="button">View More</button>
-                    </div>
-                </div>
-                <div class="card swiper-slide">
-                    <div class="image-content">
-                        <span class="overlay"></span>
-
-                        <div class="card-image">
-                            <!--<img src="images/profile9.jpg" alt="" class="card-img">-->
-                        </div>
-                    </div>
-
-                    <div class="card-content">
-                        <h2 class="name">David Dell</h2>
-                        <p class="description">The lorem text the section that contains header with having open functionality. Lorem dolor sit amet consectetur adipisicing elit.</p>
-
-                        <button class="button">View More</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="swiper-button-next swiper-navBtn"></div>
-        <div class="swiper-button-prev swiper-navBtn"></div>
-        <div class="swiper-pagination"></div>
-    </div>
+		
+		
+		
+	</div>
 </body>
-<script src="${cpath}/resources/js/bottom.js"></script>
+<%-- <script src="${cpath}/resources/js/bottom.js"></script> --%>
 </html>
