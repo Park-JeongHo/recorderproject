@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="kr.smhrd.mapper.TblBrdMapper">
+
+
+<insert id="brdRegister" parameterType="kr.smhrd.entity.TblBrd" >
+
+insert into TBL_BRD(brd_seq,brd_title,brd_content,user_id,brd_img,brd_date)
+values(brd_seq.NEXTVAL,#{brd_title},#{brd_content},#{user_id},#{brd_img},sysdate)
+</insert>
+
+<select id="brdList" resultType="kr.smhrd.entity.TblBrd">
+select * from tbl_brd order by brd_seq desc
+</select>
+
+
+
+
+</mapper>

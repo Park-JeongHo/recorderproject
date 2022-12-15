@@ -23,9 +23,10 @@ public class TblUserController {
 			session.setAttribute("m", m); // ${m}
 			return "redirect:/home.do";
 		}else {
+			
 			return "redirect:/main.do";
 		}
-		//System.out.println(m.getUser_name());
+		
 		
 
 	}

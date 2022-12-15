@@ -2,16 +2,24 @@ package kr.smhrd.controller;
 
 
 
-import org.springframework.stereotype.Controller;
+import java.util.List;
 
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import kr.smhrd.entity.TblBrd;
+import kr.smhrd.mapper.TblBrdMapper;
+import lombok.RequiredArgsConstructor;
 
 
 
 @Controller
+@RequiredArgsConstructor
 public class HomeController {
 
-
+	private final TblBrdMapper tblBrdMapper;
+	
 	@RequestMapping("/main.do")
 	public String main() {
 
@@ -33,8 +41,11 @@ public class HomeController {
 		return "pet/eye";
 	}
 	@RequestMapping("/brd.do")
-	public String brd() {
+	public String list(Model model) {
 
+		List<TblBrd> list = tblBrdMapper.brdList();
+		model.addAttribute("list",list);
+		
 		return "pet/brd";
 	}
 	@RequestMapping("/dtl.do")

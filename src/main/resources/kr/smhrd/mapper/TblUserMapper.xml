@@ -8,7 +8,7 @@ select * from tbl_user where user_id = #{user_id} and user_pw = #{user_pw}
 </select>
 <insert id="join" parameterType="kr.smhrd.entity.TblUser">
 insert into TBL_USER
-values(#{user_id},#{user_pw},#{user_name},#{user_email},sysdate,'0')
+values(#{user_pw},#{user_name},#{user_email},sysdate,'0')
 </insert>
 
 

@@ -54,7 +54,7 @@
 
 <title>복실복실</title>
 <body style="background: linear-gradient(to right, #FFAFBD, #ffc3a0);">
-	
+
 	<div class="container">
 		<div class="divider"></div>
 		<!-- header -->
@@ -184,9 +184,8 @@
 					<div class="widget">
 						<h3>Find Us</h3>
 						<ul class="list-unstyled float-start links">
-							<li>
-								<img id="map" src="${cpath}/resources/img/map.PNG" style="width: 360px; height: 220px; border: solid 1px;">
-							</li>
+							<li><img id="map" src="${cpath}/resources/img/map.PNG"
+								style="width: 360px; height: 220px; border: solid 1px;"></li>
 						</ul>
 
 					</div>
@@ -226,3 +225,4 @@
 
 </body>
 </html>
+

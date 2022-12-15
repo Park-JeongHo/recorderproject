@@ -2,12 +2,15 @@ package kr.smhrd.entity;
 
 import java.util.Date;
 
+import org.springframework.web.multipart.MultipartFile;
+
 import lombok.Data;
 
 @Data
 public class TblBrd {
 
-	 // 게시글 번호 
+
+	// 게시글 번호 
     private int brd_seq;
 
     // 게시글 제목 
@@ -24,4 +27,6 @@ public class TblBrd {
 
     // 게시글 날짜 
     private Date brd_date;
+    
+    
 }

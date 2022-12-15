@@ -13,10 +13,6 @@
 <link rel="stylesheet" href="${cpath}/resources/css/style.css">
 <link rel="shortcut icon" href="${cpath}/resources/images/logo.png">
 
-<link rel="stylesheet"
-	href="https://unpkg.com/swiper/swiper-bundle.min.css">
-
-
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link
@@ -40,8 +36,7 @@
 <!-- Latest compiled JavaScript -->
 <script
 	src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-<script
-	src="https://cdn.jsdelivr.net/npm/jquery@3.6.1/dist/jquery.slim.min.js"></script>
+
 <script
 	src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
 <script
@@ -53,21 +48,168 @@
 
 
 <title>복실복실</title>
+<style type="text/css">
+:root {
+  --surface-color: #fff;
+  --curve: 40;
+}
+
+
+
+body {
+  font-family: 'Noto Sans JP', sans-serif;
+ 
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  margin: 4rem 5vw;
+  padding: 0;
+  list-style-type: none;
+}
+
+.card {
+  position: relative;
+  display: block;
+  height: 100%;  
+  border-radius: calc(var(--curve) * 1px);
+  overflow: hidden;
+  text-decoration: none;
+}
+
+.card__image {      
+  width: 100%;
+  height: 100%;
+}
+
+.card__overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;      
+    
+  background-color: var(--surface-color);      
+  transform: translateY(100%);
+  transition: .2s ease-in-out;
+}
+
+.card:hover .card__overlay {
+  transform: translateY(0);
+}
+
+.card__header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 2em;
+  padding: 15px;  
+  background-color: var(--surface-color);
+  transform: translateY(-100%);
+  transition: .2s ease-in-out;
+}
+
+.card__arc {
+  width: 80px;
+  height: 80px;
+  position: absolute;
+  bottom: 100%;
+  right: 0;      
+  z-index: 1;
+}
+
+.card__arc path {
+  fill: var(--surface-color);
+  d: path("M 40 80 c 22 0 40 -22 40 -40 v 40 Z");
+}       
+
+.card:hover .card__header {
+  transform: translateY(0);
+}
+
+.card__thumb {
+  flex-shrink: 0;
+  width: 50px;
+  height: 50px;      
+  border-radius: 50%;      
+}
+
+.card__title {
+  font-size: 1em;
+  margin: 0 0 .3em;
+  color: #6A515E;
+}
+
+.card__tagline {
+  display: block;
+  margin: 1em 0;
+  font-family: "MockFlowFont";  
+  font-size: .8em; 
+  color: #D7BDCA;  
+}
+
+.card__status {
+  font-size: .8em;
+  color: #D7BDCA;
+}
+
+.card__description {
+  padding: 0 2em 2em;
+  margin: 0;
+  color: #D7BDCA;
+  font-family: "MockFlowFont";   
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+      text-overflow: ellipsis;
+    display: inline-block;
+}    
+</style>
+</head>
+
 <body style="background: linear-gradient(to right, #FFAFBD, #ffc3a0);">
+ <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">×</button>
+          <h4 class="modal-title">Modal Header</h4>
+        </div>
+        <div class="modal-body">
+          <p>Some text in the modal.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
 
 	<div class="container">
 		<div class="divider"></div>
 		<!-- header -->
 		<div class="section 1">
-			<a href="${cpath}/home.do"><img src="${cpath}/resources/img/logo.png"
-				style="width: 100px;"></a>
+			<a href="${cpath}/home.do"><img
+				src="${cpath}/resources/img/logo.png" style="width: 100px;"></a>
 			<div class="btn-group"
 				style="padding-left: 300px; padding-top: 70px;">
-				<button type="button" class="btn" onclick="location.href='${cpath}/act.do'">감정분석</button>
-				<button type="button" class="btn" onclick="location.href='${cpath}/eye.do'">안구질환</button>
-				<button type="button" class="btn" onclick="location.href='${cpath}/dtl.do'">상세보기</button>
-				<button type="button" class="btn btn-outline-info active" onclick="location.href='${cpath}/brd.do'">커뮤니티</button>
-				<button type="button" class="btn" onclick="location.href='${cpath}/aban.do'">유기동물</button>
+				<button type="button" class="btn"
+					onclick="location.href='${cpath}/act.do'">감정분석</button>
+				<button type="button" class="btn"
+					onclick="location.href='${cpath}/eye.do'">안구질환</button>
+				<button type="button" class="btn"
+					onclick="location.href='${cpath}/dtl.do'">상세보기</button>
+				<button type="button" class="btn btn-outline-info active"
+					onclick="location.href='${cpath}/brd.do'">커뮤니티</button>
+				<button type="button" class="btn"
+					onclick="location.href='${cpath}/aban.do'">유기동물</button>
 			</div>
 			<div class="dropdown" style="float: right; margin-top: 35px;">
 				<button type="button" class="btn btn-info btn-sm dropdown-toggle"
@@ -77,17 +219,39 @@
 						class="dropdown-item" href="${cpath}/logout.do">로그아웃</a>
 				</div>
 			</div>
-			<div class="chip" style="float: right; margin-top: 35px; background: beige;">
+			<div class="chip"
+				style="float: right; margin-top: 35px; background: beige;">
 				<img src="${cpath}/resources/img/pf.png" alt="Contact Person">
 				${m.user_name}님 환영합니다
 			</div>
 		</div>
 		<div class="divider"></div>
-		
-		<div class="section 2">
-		<div>
-		커뮤니티</div>
-		
+
+		<div class="section 2" style="box-sizing: content-box;">
+
+			<ul class="cards">
+				<c:forEach items="${list}" var="vo">
+					<li><a href="#" class="card"> <img id="brd_img"
+							src="${cpath}/resources/img/brdimg/${vo.brd_img}"
+							class="card__image" />
+							<div class="card__overlay">
+								<div class="card__header">
+									<div class="card__header-text">
+										<h3 class="card__title" id="brd_title">${vo.brd_title}</h3>
+										<span class="card__status" id="brd_date">${vo.brd_date}</span>
+									</div>
+								</div>
+								<p class="card__description" id="brd_content"
+									>${vo.brd_content}</p>
+							</div>
+					</a></li>
+				</c:forEach>
+			</ul>
+
+
+
+
+			<jsp:include page="brdModal.jsp"></jsp:include>
 
 		</div>
 
@@ -112,7 +276,8 @@
 					<div class="widget">
 						<h3>Find Us</h3>
 						<ul class="list-unstyled float-start links">
-							<li><img id="map" src="${cpath}/resources/img/map.PNG" style="width: 360px; height: 220px; border: solid 1px;"></li>
+							<li><img id="map" src="${cpath}/resources/img/map.PNG"
+								style="width: 360px; height: 220px; border: solid 1px;"></li>
 
 						</ul>
 

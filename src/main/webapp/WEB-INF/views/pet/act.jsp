@@ -10,7 +10,14 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
+<link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
 <link rel="stylesheet" href="${cpath}/resources/css/style.css">
+
+
+<link rel="stylesheet" href="${cpath}/resources/css/act.css">
 <link rel="shortcut icon" href="${cpath}/resources/images/logo.png">
 
 <link rel="stylesheet"
@@ -51,7 +58,54 @@
 <script
 	src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
+<script>
+$(document).ready(function(){ 
+    $("#hide1").click(function(){
+        $("#hide2").hide();
+    });
+});
 
+$(document).ready(function(){ 
+    $("#hide1").click(function(){
+        $("#hide3").show();
+    });
+});
+
+$(document).ready(function(){ 
+    $("#hide1").click(function(){
+        $("#title").show();
+    });
+});
+
+
+$(document).ready(function(){ 
+    $("#upload").click(function(){
+        $("#hide3").hide();
+    });
+});
+
+$(document).ready(function(){ 
+    $("#upload").click(function(){
+        $("#title").hide();
+    });
+});
+
+$(document).ready(function(){ 
+    $("#upload").click(function(){
+        $("#root").show();
+    });
+});
+
+$(document).ready(function(){ 
+    $("#upload").click(function(){
+        $("#box").show();
+    });
+});
+
+
+
+
+</script>
 <title>복실복실</title>
 <body style="background: linear-gradient(to right, #FFAFBD, #ffc3a0);">
 
@@ -84,12 +138,158 @@
 		</div>
 		<div class="divider"></div>
 		
-		<div class="section 2">
-		<div>
-		감정분석</div>
+		<div class="section 2" id = "hide2">
+			<img alt="..." src="${cpath}/resources/img/right.png" style="height: 3%;
+    width: 3%;
+    position: relative;
+    left: 358px;
+    top: 292px;">
+    
+    <img alt="..." src="${cpath}/resources/img/right.png" style="height: 3%;
+    width: 3%;
+    position: relative;
+    left: 764px;
+    top: 292px;">
+			<div>
+
+				<div class="card shadow p-3 mb-5 bg-body rounded animate__animated animate__backInUp"
+					style="width: 21rem; float: left; text-align: center;">
+					<img src="${cpath}/resources/img/act_1.jpg" class="card-img-top"
+						alt="...">
+					<div class="card-body">
+
+						<h5 class="card-title" style="text-align: center;">①</h5>
+						<p class="card-text">우리 아이가 무엇을 느끼고 있을까요?</p>
+						<br>
+						<p class="card-text">궁금하시면 영상을 찍어 올려주세요!</p>
+						<div class="d-flex align-items-center">
+							<div class="flex-shrink-0"></div>
+
+						</div>
+					</div>
+				</div>
+			
+				
+				
+				<div class="card shadow p-3 mb-5 bg-body rounded animate__animated animate__backInUp animate__delay-1s"
+					style="width: 21rem;
+    float: left;
+    margin-left: 10%;
+    margin-right: 10%;">
+					<img src="${cpath}/resources/img/act_1.jpg" class="card-img-top"
+						alt="...">
+					<div class="card-body"style="text-align: center;" >
+
+						<h5 class="card-title">②</h5>
+						<p class="card-text">2000여장의 데이터로 학습된</p>
+						<br>
+						<p class="card-text">AI가 분석해드립니다!</p>
+						<div class="d-flex align-items-center">
+							<div class="flex-shrink-0"></div>
+
+						</div>
+					</div>
+				</div>
+				<div class="card shadow p-3 mb-5 bg-body rounded animate__animated animate__backInUp animate__delay-2s"
+				
+					style="width: 25rem; width: 21rem; text-align: center;
+    position: relative;
+    top: 7px;"
+    >
+					<img src="${cpath}/resources/img/act_1.jpg" class="card-img-top"
+						alt="...">
+					<div class="card-body">
+
+						<h5 class="card-title">③</h5>
+						<p class="card-text"></p>
+						<br>
+					
+						<p class="card-text">우리아이가 원하는것을 해주세요!</p>
+						<br>
+						
+						<div class="d-flex align-items-center">
+							<div class="flex-shrink-0"></div>
+	
+						</div>
+					</div>
+				</div>
+
+			</div>
+			
+			
+
+			
+			
+			
+
+<div class="wrap">
+  <button class="button" id = "hide1" style="    position: relative;
+    left: 13em;
+    top: -1em;">Next</button>
+</div>
+
+	
+	</div>
+	
+	
+<!--             페이지 2                                        -->
+			<br>
+			<h1 style="text-align: center; display:none ;" id = "title" >이런 사진은 피해주세요!!!</h1>
+
+<br>
+				
+		<div class="wrapper" id = "hide3" style="display: none">
+
+    <div><img src="${cpath}/resources/img/dan1.PNG"></div>
+
+   <div><img src="${cpath}/resources/img/dan2.PNG"></div>
+
+  <div><img src="${cpath}/resources/img/dan3.PNG"></div>
+  
+   <div><img src="${cpath}/resources/img/dan4.PNG"></div>
+
+   <div><img src="${cpath}/resources/img/dan5.PNG"></div>
+
+  <div class="wrap">
+  <button class="button" id = "upload" style="    position: relative;
+    left: 13em;
+    top: -1em;">영상 업로드</button>
+    
+</div>
+ 
+ 
+ <!--             페이지 3                                        -->
+ 
+
+</div>
+
+<div id="root" style="display: none">
+  <h2 class="title">File Upload</h2>
+  <hr>
+  <div class="contents">
+    <div class="upload-box" style=" position: relative;
+    left: 185px;"
+   >
+    
+      <div id="drop-file" class="drag-file">
+        <img src="https://img.icons8.com/pastel-glyph/2x/image-file.png" alt="파일 아이콘" class="image">
+        <p class="message">Drag files to upload</p>
+      </div>
+      <label class="file-label" for="chooseFile">Choose File</label>
+      <input class="file" id="chooseFile" type="file" multiple onchange="dropFile.handleFiles(this.files)">
+    </div>
+    <div id="files" class="files">
+      <div class="file">
+        
+      </div>
+    </div>
+  </div>
+</div>
+<br><br><br><br>
+	
 		
 
-		</div>
+	
 
 		<!-- footer -->
 		<div class="divider"></div>
@@ -150,6 +350,6 @@
 	</div>
 
 
-
 </body>
+<script src="${cpath}/resources/js/act.js"></script>
 </html>
