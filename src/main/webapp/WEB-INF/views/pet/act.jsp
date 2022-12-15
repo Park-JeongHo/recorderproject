@@ -10,7 +10,18 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+<!-- CSS only -->
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+	crossorigin="anonymous">
 <link rel="stylesheet" href="${cpath}/resources/css/style.css">
+
+
+<link rel="stylesheet" href="${cpath}/resources/css/act.css">
 <link rel="shortcut icon" href="${cpath}/resources/images/logo.png">
 
 <link rel="stylesheet"
@@ -33,6 +44,11 @@
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
 	rel="stylesheet">
+<!-- JavaScript Bundle with Popper -->
+<script
+	src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+	integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+	crossorigin="anonymous"></script>
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script
@@ -51,23 +67,30 @@
 <script
 	src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
-
+<script>
+	
+</script>
 <title>복실복실</title>
 <body style="background: linear-gradient(to right, #FFAFBD, #ffc3a0);">
 
 	<div class="container">
-		<div class="divider"></div>
+
 		<!-- header -->
 		<div class="section 1">
-			<a href="${cpath}/home.do"><img src="${cpath}/resources/img/logo.png"
-				style="width: 100px;"></a>
+			<a href="${cpath}/home.do"><img
+				src="${cpath}/resources/img/logo.png" style="width: 100px;"></a>
 			<div class="btn-group"
 				style="padding-left: 300px; padding-top: 70px;">
-				<button type="button" class="btn btn-outline-info active" onclick="location.href='${cpath}/act.do'">감정분석</button>
-				<button type="button" class="btn" onclick="location.href='${cpath}/eye.do'">안구질환</button>
-				<button type="button" class="btn" onclick="location.href='${cpath}/dtl.do'">상세보기</button>
-				<button type="button" class="btn" onclick="location.href='${cpath}/brd.do'">커뮤니티</button>
-				<button type="button" class="btn" onclick="location.href='${cpath}/aban.do'">유기동물</button>
+				<button type="button" class="btn btn-outline-info active"
+					onclick="location.href='${cpath}/act.do'">감정분석</button>
+				<button type="button" class="btn"
+					onclick="location.href='${cpath}/eye.do'">안구질환</button>
+				<button type="button" class="btn"
+					onclick="location.href='${cpath}/dtl.do'">상세보기</button>
+				<button type="button" class="btn"
+					onclick="location.href='${cpath}/brd.do'">커뮤니티</button>
+				<button type="button" class="btn"
+					onclick="location.href='${cpath}/aban.do'">유기동물</button>
 			</div>
 			<div class="dropdown" style="float: right; margin-top: 35px;">
 				<button type="button" class="btn btn-info btn-sm dropdown-toggle"
@@ -77,19 +100,238 @@
 						class="dropdown-item" href="${cpath}/logout.do">로그아웃</a>
 				</div>
 			</div>
-			<div class="chip" style="float: right; margin-top: 35px; background: beige;">
+			<div class="chip"
+				style="float: right; margin-top: 35px; background: beige;">
 				<img src="${cpath}/resources/img/pf.png" alt="Contact Person">
 				${m.user_name}님 환영합니다
 			</div>
 		</div>
 		<div class="divider"></div>
-		
-		<div class="section 2">
-		<div>
-		감정분석</div>
-		
+
+		<div class="section 2" id="hide2">
+			<img alt="..." src="${cpath}/resources/img/right.png"
+				style="height: 3%; width: 3%; position: relative; left: 358px; top: 292px;">
+
+			<img alt="..." src="${cpath}/resources/img/right.png"
+				style="height: 3%; width: 3%; position: relative; left: 764px; top: 292px;">
+			<div>
+
+				<div
+					class="card shadow p-3 mb-5 bg-body rounded animate__animated animate__backInUp"
+					style="width: 21rem; float: left; text-align: center;">
+					<img src="${cpath}/resources/img/act_1.jpg" class="card-img-top"
+						alt="...">
+					<div class="card-body">
+
+						<h5 class="card-title" style="text-align: center;">①</h5>
+						<p class="card-text">우리 아이가 무엇을 느끼고 있을까요?</p>
+						<br>
+						<p class="card-text">궁금하시면 영상을 찍어 올려주세요!</p>
+						<div class="d-flex align-items-center">
+							<div class="flex-shrink-0"></div>
+
+						</div>
+					</div>
+				</div>
+
+
+
+				<div
+					class="card shadow p-3 mb-5 bg-body rounded animate__animated animate__backInUp animate__delay-1s"
+					style="width: 21rem; float: left; margin-left: 10%; margin-right: 10%;">
+					<img src="${cpath}/resources/img/act_1.jpg" class="card-img-top"
+						alt="...">
+					<div class="card-body" style="text-align: center;">
+
+						<h5 class="card-title">②</h5>
+						<p class="card-text">2000여장의 데이터로 학습된</p>
+						<br>
+						<p class="card-text">AI가 분석해드립니다!</p>
+						<div class="d-flex align-items-center">
+							<div class="flex-shrink-0"></div>
+
+						</div>
+					</div>
+				</div>
+				<div
+					class="card shadow p-3 mb-5 bg-body rounded animate__animated animate__backInUp animate__delay-2s"
+					style="width: 25rem; width: 21rem; text-align: center; position: relative; top: 7px;">
+					<img src="${cpath}/resources/img/act_1.jpg" class="card-img-top"
+						alt="...">
+					<div class="card-body">
+
+						<h5 class="card-title">③</h5>
+						<p class="card-text"></p>
+						<br>
+
+						<p class="card-text">우리아이가 원하는것을 해주세요!</p>
+						<br>
+
+						<div class="d-flex align-items-center">
+							<div class="flex-shrink-0"></div>
+
+						</div>
+					</div>
+				</div>
+
+			</div>
+
+
+
+
+
+
+
+			<div class="wrap">
+				<button class="button" id="hide1"
+					style="position: relative; left: 13em; top: -1em;">Next</button>
+			</div>
+
 
 		</div>
+
+
+		<!--             페이지 2                                        -->
+		<br>
+		<h1 style="text-align: center; display: none;" id="title">이런 사진은
+			피해주세요!!!</h1>
+
+		<br>
+
+		<div class="wrapper" id="hide3" style="display: none">
+
+			<div>
+				<img src="${cpath}/resources/img/dan1.PNG">
+			</div>
+
+			<div>
+				<img src="${cpath}/resources/img/dan2.PNG">
+			</div>
+
+			<div>
+				<img src="${cpath}/resources/img/dan3.PNG">
+			</div>
+
+			<div>
+				<img src="${cpath}/resources/img/dan4.PNG">
+			</div>
+
+			<div>
+				<img src="${cpath}/resources/img/dan5.PNG">
+			</div>
+			<!--  
+  <div class="wrap">
+  <button class="button" id = "upload" style="    position: relative;
+    left: 13em;
+    top: -1em;">영상 업로드</button>
+   
+</div>
+ -->
+		</div>
+
+		<!--             페이지 3                                        -->
+
+
+		<div class="container" style="margin-bottom: 10em;">
+
+			<!-- Trigger the modal with a button -->
+			<button type="button" class="btn btn-info btn-lg" data-toggle="modal"
+				data-target="#myModal" id="modal1"
+				style="margin-left: 67em; margin-top: -8em;; display: none;">next</button>
+
+			<!-- Modal -->
+			<div class="modal fade" id="myModal" role="dialog"
+				style="padding-left: 17px; background-color: transparent; box-shadow: revert;">
+				<div class="modal-dialog">
+
+					<!-- Modal content-->
+					<form method="post" enctype="multipart/form-data">
+						<div class="modal-content">
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal">&times;</button>
+
+							</div>
+							<div class="modal-body">
+								<div id="root">
+									<h2 class="title">File Upload</h2>
+									<hr>
+									<div class="contents">
+										<div class="upload-box"
+											style="position: relative; left: 185px;">
+
+											<div id="drop-file" class="drag-file">
+												<img
+													src="https://img.icons8.com/pastel-glyph/2x/image-file.png"
+													alt="파일 아이콘" class="image">
+												<p class="message">Drag files to upload</p>
+											</div>
+											<label class="file-label" for="chooseFile">Choose
+												File</label> <input class="file" id="chooseFile" type="file"
+												accept="image/*" onchange="loadFile(this)"
+												onchange="dropFile.handleFiles(this.files)">
+
+										</div>
+
+										<div id="files" class="files">
+											<div class="file"></div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="container">
+								<div class="image-upload" id="image-upload">
+
+									<div class="fileContainer">
+										<div class="fileInput">
+											<p>FILE NAME:</p>
+											<p id="fileName"></p>
+										</div>
+										<div class="buttonContainer">
+											<div class="submitButton" id="submitButton">SUBMIT</div>
+										</div>
+									</div>
+								</div>
+
+
+							</div>
+						</div>
+				</div>
+				</form>
+			</div>
+
+		</div>
+
+
+
+		<!--  
+
+<div id="root" style="display: none">
+  <h2 class="title">File Upload</h2>
+  <hr>
+  <div class="contents">
+    <div class="upload-box" style=" position: relative;
+    left: 185px;"
+   >
+    
+      <div id="drop-file" class="drag-file">
+        <img src="https://img.icons8.com/pastel-glyph/2x/image-file.png" alt="파일 아이콘" class="image">
+        <p class="message">Drag files to upload</p>
+      </div>
+      <label class="file-label" for="chooseFile">Choose File</label>
+      <input class="file" id="chooseFile" type="file" multiple onchange="dropFile.handleFiles(this.files)">
+    </div>
+    <div id="files" class="files">
+      <div class="file">
+        
+      </div>
+    </div>
+  </div>
+</div>
+<br><br><br><br>
+	
+-->
+
+
 
 		<!-- footer -->
 		<div class="divider"></div>
@@ -112,7 +354,8 @@
 					<div class="widget">
 						<h3>Find Us</h3>
 						<ul class="list-unstyled float-start links">
-							<li><img id="map" src="${cpath}/resources/img/map.PNG" style="width: 360px; height: 220px; border: solid 1px;"></li>
+							<li><img id="map" src="${cpath}/resources/img/map.PNG"
+								style="width: 360px; height: 220px; border: solid 1px;"></li>
 
 						</ul>
 
@@ -150,6 +393,6 @@
 	</div>
 
 
-
 </body>
+<script src="${cpath}/resources/js/act.js"></script>
 </html>
