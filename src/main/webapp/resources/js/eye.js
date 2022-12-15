@@ -56,28 +56,57 @@ const dropFile = new DropFile("drop-file", "files");
 
 
 $(document).ready(function(){ 
-    $("#hide1").click(function(){
-        $("#hide2").hide();
+    $("#eyedog").click(function(){
+        $("#eyedog").hide();
+    });
+});
+
+
+$(document).ready(function(){ 
+    $("#eyedog").click(function(){
+        $("#eyecat").hide();
+    });
+});
+
+
+$(document).ready(function(){ 
+    $("#eyecat").click(function(){
+        $("#eyedog").hide();
+    });
+});
+
+
+$(document).ready(function(){ 
+    $("#eyecat").click(function(){
+        $("#eyecat").hide();
     });
 });
 
 $(document).ready(function(){ 
-    $("#hide1").click(function(){
-        $("#hide3").show();
+    $("#eyecat").click(function(){
+        $("#eye_title").hide();
     });
 });
 
 $(document).ready(function(){ 
-    $("#hide1").click(function(){
-        $("#title").show();
+    $("#eyedog").click(function(){
+        $("#eye_title").hide();
     });
 });
 
 $(document).ready(function(){ 
-    $("#hide1").click(function(){
+    $("#eyedog").click(function(){
+        $("#page2").show();
+         $("#modal1").show();
+    });
+});
+$(document).ready(function(){ 
+    $("#eyecat").click(function(){
+        $("#page2").show();
         $("#modal1").show();
     });
 });
+
 
 $(document).ready(function(){ 
     $("#submitButton").click(function(){
@@ -85,7 +114,6 @@ $(document).ready(function(){
     });
     
 });
-
 
 
 var submit = document.getElementById('submitButton');
@@ -119,3 +147,8 @@ function loadFile(input) {
     var container = document.getElementById('image-show');
     container.appendChild(newImage);
 };
+
+
+
+
+
