@@ -40,8 +40,7 @@
 <!-- Latest compiled JavaScript -->
 <script
 	src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-<script
-	src="https://cdn.jsdelivr.net/npm/jquery@3.6.1/dist/jquery.slim.min.js"></script>
+
 <script
 	src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
 <script
@@ -51,46 +50,43 @@
 <script
 	src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 <script type="text/javascript">
-	$(document).ready(() => {
-		
-		var frm = $("#frm");
-		$(".pagination a").on("click", function(e){
-			e.preventDefault(); 
-			var page = $(this).attr("href");
-			$("#page").val(page);
+	$(document).ready(function() {
+
+		$("button").on("click", function(e) {
+			var frm = $("#frm");
+			frm.attr("action", "${cpath}/dtl.do");
+			frm.attr("method", "get");
 			frm.submit();
 		});
-		
-		$(".get").on("click", function(e){
-  			e.preventDefault();
-  			var dtl_seq = $(this).attr("href");
-  			frm.attr("action", "${cpath}/get.do");
-  			frm.attr("method", "get");
-  			var tag = "<input type = 'hidden' name = 'dtl_seq' value = '"+dtl_seq+"'>";
-  			frm.append(tag);
-  			frm.submit();
-  		});
-	});
 
+	});
 </script>
 
 <title>복실복실</title>
+</head>
 <body style="background: linear-gradient(to right, #FFAFBD, #ffc3a0);">
 
 	<div class="container">
 		<div class="divider"></div>
 		<!-- header -->
 		<div class="section 1">
-			<a href="${cpath}/home.do"><img src="${cpath}/resources/img/logo.png"
-				style="width: 100px;"></a>
+			<a href="${cpath}/home.do"><img
+				src="${cpath}/resources/img/logo.png" style="width: 100px;"></a>
 			<div class="btn-group"
 				style="padding-left: 300px; padding-top: 70px;">
-				<button type="button" class="btn" onclick="location.href='${cpath}/act.do'">감정분석</button>
-				<button type="button" class="btn" onclick="location.href='${cpath}/eye.do'">안구질환</button>
-				<button type="button" class="btn btn-outline-info active" onclick="location.href='${cpath}/dtl.do'">상세보기</button>
-				<button type="button" class="btn" onclick="location.href='${cpath}/brd.do'">커뮤니티</button>
-				<button type="button" class="btn" onclick="location.href='${cpath}/aban.do'">유기동물</button>
+				<button type="button" class="btn"
+					onclick="location.href='${cpath}/act.do'">감정분석</button>
+				<button type="button" class="btn"
+					onclick="location.href='${cpath}/eye.do'">안구질환</button>
+				<button type="button" class="btn"
+					onclick="location.href='${cpath}/dtl.do'">상세보기</button>
+				<button type="button" class="btn"
+					onclick="location.href='${cpath}/brd.do'">커뮤니티</button>
+				<button type="button" class="btn"
+					onclick="location.href='${cpath}/aban.do'">유기동물</button>
 			</div>
+
+
 			<div class="dropdown" style="float: right; margin-top: 35px;">
 				<button type="button" class="btn btn-info btn-sm dropdown-toggle"
 					data-toggle="dropdown" style="border-radius: 50px; height: auto;">info</button>
@@ -99,98 +95,75 @@
 						class="dropdown-item" href="${cpath}/logout.do">로그아웃</a>
 				</div>
 			</div>
-			<div class="chip" style="float: right; margin-top: 35px; background: beige;">
+			<div class="chip"
+				style="float: right; margin-top: 35px; background: beige;">
 				<img src="${cpath}/resources/img/pf.png" alt="Contact Person">
 				${m.user_name}님 환영합니다
 			</div>
-		</div>
-		<div class="divider"></div>
-		
-		<div class="section 2">
-		<div class="section sec-testimonials">
-		<div class="container">
-			
-			<div class="row mb-5 align-items-center">
 
-				<div class="col-md-6">
-					<h2 class="font-weight-bold heading text-primary mb-4 mb-md-0">질병정보를 알아봅시다</h2>
+
+		</div>
+
+		<div class="divider"></div>
+
+
+
+
+
+
+
+
+		<div class="section sec-testimonials">
+			<div class="container">
+				<hr>
+				<div class="row mb-5 align-items-center">
+
+					<div class="col-md-6">
+						<h2 class="font-weight-bold heading text-primary mb-4 mb-md-0">질환의
+							상세정보를 알아봅시다</h2>
+					</div>
 				</div>
 
-				
-			</div>
+				<div class="row">
+					<div class="col-lg-4"></div>
+				</div>
+				<div class="testimonial-slider-wrap">
+					<div class="testimonial-slider">
 
-			<form action="${cpath}/dtl.do" method = "post">
-			<div class="input-field col s12">
-				<select name = "type" style="display: block;">
-					<option selected>품종</option>
-					<option value = "개" ${cri.type == "개" ? "selected" : ""}>개</option>
-					<option value = "고양이" ${cri.type == "고양이" ? "selected" : ""}>고양이</option>
-				</select>
-				<%--  <input type = "text" name = "keyword" value = "${cri.keyword}"> --%>
-				<button class = "btn btn-success btn-sm" type = "submit">검색</button>
-			</div>
-			</form>
-			<br>
-			<div class="row">
-				<div class="col-lg-4"></div>
-			</div>
-			<c:forEach var="list" items="${DtlList}">
-			<table class = "table table-striped">
-				<tr>
-					<td width = "500">
-					<div class="testimonial-slider-wrap">
-						<div class="testimonial-slider">
-							<div class="item">
-								<div class="testimonial">
-								<a class = "get" href = "${list.dtl_seq}">
-									<c:if test="${list.dtl_clsfc == 0}">
-									<img src="${cpath}/resources/img/dog.jpg" alt="Image"
-										class="img-fluid rounded-circle w-50 mb-1">
-									</c:if>
-									<c:if test="${list.dtl_clsfc == 1}">
-										<img src="${cpath}/resources/img/cat.jpg" alt="Image"
-										class="img-fluid rounded-circle w-50 mb-1">
-									</c:if>
-								</a>
-								</div>
+						<div class="item">
+							<div class="testimonial">
+								<img src="${cpath}/resources/img/disease/${dtl.dtl_seq}.jpg"
+									alt="Image" class="img-fluid rounded-circle w-50 mb-1">
+
+								<h3 class="h5 text-primary mb-4"
+									style="position: relative; top: 10px;">${dtl.dtl_title}</h3>
+								<blockquote>
+									<p>&ldquo;${dtl.dtl_info}&rdquo;</p>
+								</blockquote>
+								<h5>관리 방법</h5>
+								<p class="text-black-50">${dtl.dtl_mgmt}</p>
 							</div>
+							<button class="btn btn-success btn-sm">목록</button>
 						</div>
+
+						<form id="frm">
+							<input type="hidden" name="dtl_seq" value="${dtl.dtl_seq}">
+
+						</form>
+
+
+
+
+
 					</div>
-				</td>
-				<td>
-					<h3 class="h5 text-primary mb-4" style="position: relative; top: 60px;">
-					${list.dtl_title}
-					</h3>
-					<p style = "position: relative; top: 50px;">주의! 혐오스러울수 있습니다!!</p>
-				</td>
-			</tr>
-			</table>
-			</c:forEach>
-		</div>
-	</div>
-	<!-- 페이징 처리 -->
-    	<ul class="pagination justify-content-center">
-			<c:if test="${AbanPageMaker.prev}">
-				<li class="page-item"><a class="page-link" href="${AbanPageMaker.startPage - 1}">Previous</a></li>
-			</c:if>
-			<c:forEach var = "pageNum" begin="${AbanPageMaker.startPage}" end = "${AbanPageMaker.endPage}">
-				<li class="page-item ${AbanPageMaker.cri.page eq pageNum ? 'active': ''}"><a class="page-link" href="${pageNum}">${pageNum}</a></li>
-			</c:forEach>
-			<c:if test="${AbanPageMaker.next}">
-				<li class="page-item"><a class="page-link" href="${AbanPageMaker.endPage + 1}">Next</a></li>
-			</c:if>
-		</ul>
-		<!-- 페이징처리 끝 -->
-	<form action="${cpath}/dtl.do" method = "post" id = "frm">
-		<input type = "hidden" id = "page" name = "page" value = "${cri.page}">
-		<input type = "hidden" name = "type" value = "${cri.type}">
-		<input type = "hidden" name = "keyword" value = "${cri.keyword}">
-	</form>
-		
+
+				</div>
+
+			</div>
 
 		</div>
 
-		<!-- footer -->
+
 		<div class="divider"></div>
 		<div class="section 4">
 			<div class="row">
@@ -211,8 +184,8 @@
 					<div class="widget">
 						<h3>Find Us</h3>
 						<ul class="list-unstyled float-start links">
-							<li><img id="map" src="${cpath}/resources/img/map.PNG" style="width: 360px; height: 220px; border: solid 1px;"></li>
-
+							<li><img id="map" src="${cpath}/resources/img/map.PNG"
+								style="width: 360px; height: 220px; border: solid 1px;"></li>
 						</ul>
 
 					</div>
@@ -247,8 +220,5 @@
 			</div>
 		</div>
 	</div>
-
-
-
 </body>
 </html>

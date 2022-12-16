@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="kr.smhrd.mapper.TblDtlMapper">
+
+<sql id="search">
+	<if test='type == "개"'>
+		where dtl_clsfc = 0
+	</if>
+	<if test='type == "고양이"'>
+		where dtl_clsfc = 1
+	</if>
+</sql>
+
+<sql id="keyword">
+	<if test="keyword != null">
+		and dtl_title like concat('%', #{keyword}, '%')
+	</if>
+</sql>
+
+	<select id="getList" resultType="kr.smhrd.entity.TblDtl">
+		select * from (select rownum as num, tbl_dtl.* from tbl_dtl
+						<include refid="search"/>
+						)
+		where num between #{pageStart} and #{pageEnd}
+	</select>
+	
+	<select id="get" resultType="kr.smhrd.entity.TblDtl">
+		select * from tbl_dtl
+		where dtl_seq = #{dtl_seq}
+	</select>
+
+	<select id="totalCount" resultType="int" parameterType="kr.smhrd.entity.AbanCriteria">
+		select count(*) from tbl_dtl
+		<include refid="search"/>
+	</select>
+</mapper>

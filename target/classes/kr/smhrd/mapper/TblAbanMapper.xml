@@ -2,10 +2,94 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="kr.smhrd.mapper.TblAbanMapper">
 
-<select id="randomList" resultType="kr.smhrd.entity.TblAban">
-select * from (select * from tbl_aban order by DBMS_RANDOM.RANDOM) <![CDATA[where rownum <= 10]]>
+	<sql id="search">
+		<if test='type == "개"'>
+			where aban_clsfc = 0
+		</if>
+		<if test='type == "고양이"'>
+			where aban_clsfc = 1
+		</if>
+	</sql>
+	<sql id="location">
+		<choose>
+			<when test='location == "서울"'>
+				and aban_area like concat(#{location}, '%')
+			</when>
+			<when test='location == "부산"'>
+				and aban_area like concat(#{location}, '%')
+			</when>
+			<when test='location == "대구"'>
+				and aban_area like concat(#{location}, '%')
+			</when>
+			<when test='location == "인천"'>
+				and aban_area like concat(#{location}, '%')
+			</when>
+			<when test='location == "광주"'>
+				and aban_area like concat(#{location}, '%')
+			</when>
+			<when test='location == "울산"'>
+				and aban_area like concat(#{location}, '%')
+			</when>
+			<when test='location == "대전"'>
+				and aban_area like concat(#{location}, '%')
+			</when>
+			<when test='location == "경기도"'>
+				and aban_area like concat(#{location}, '%')
+			</when>
+			<when test='location == "강원도"'>
+				and aban_area like concat(#{location}, '%')
+			</when>
+			<when test='location == "충청북도"'>
+				and aban_area like concat(#{location}, '%')
+			</when>
+			<when test='location == "충청남도"'>
+				and aban_area like concat(#{location}, '%')
+			</when>
+			<when test='location == "전라북도"'>
+				and aban_area like concat(#{location}, '%')
+			</when>
+			<when test='location == "전라남도"'>
+				and aban_area like concat(#{location}, '%')
+			</when>
+			<when test='location == "경상북도"'>
+				and aban_area like concat(#{location}, '%')
+			</when>
+			<when test='location == "경상남도"'>
+				and aban_area like concat(#{location}, '%')
+			</when>
+			<when test='location == "제주"'>
+				and aban_area like concat(#{location}, '%')
+			</when>
 
-</select>
+			<otherwise>
+			</otherwise>
+		</choose>
+
+	</sql>
+
+
+	<select id="getList" resultType="kr.smhrd.entity.TblAban"
+		parameterType="kr.smhrd.entity.AbanCriteria">
+		SELECT * FROM (SELECT ROWNUM AS NUM, tbl_aban.* FROM tbl_aban
+		<include refid="search" />
+		<include refid="location" />
+		)
+		where NUM between #{pageStart} and #{pageEnd}
+		<!-- <include refid="search"/> -->
+		<!-- <include refid="location"/> -->
+	</select>
+
+	<select id="totalCount" resultType="int"
+		parameterType="kr.smhrd.entity.AbanCriteria">
+		select count(*) from tbl_aban
+		<include refid="search" />
+		<include refid="location" />
+	</select>
+
+	<select id="randomList" resultType="kr.smhrd.entity.TblAban">
+		select * from (select * from tbl_aban order by DBMS_RANDOM.RANDOM) <![CDATA[where rownum <= 10]]>
+
+	</select>
 
 
 
