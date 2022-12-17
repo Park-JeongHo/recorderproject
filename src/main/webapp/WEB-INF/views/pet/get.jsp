@@ -115,7 +115,7 @@
 
 		<div class="section sec-testimonials">
 			<div class="container">
-				<hr>
+				
 				<div class="row mb-5 align-items-center">
 
 					<div class="col-md-6">
@@ -133,7 +133,7 @@
 						<div class="item">
 							<div class="testimonial">
 								<img src="${cpath}/resources/img/disease/${dtl.dtl_seq}.jpg"
-									alt="Image" class="img-fluid rounded-circle w-50 mb-1">
+									alt="Image" style="width: 20%;border-radius: 130px;">
 
 								<h3 class="h5 text-primary mb-4"
 									style="position: relative; top: 10px;">${dtl.dtl_title}</h3>

@@ -111,13 +111,13 @@ var frm = $("#frm");
 			</div>
 			<div>
 				<div>
-					<form action="${cpath}/aban.do" method = "post">
+					<form action="${cpath}/aban.do" method = "post" style="display: -webkit-inline-box;">
 					<select name = "type" style="display: block;">
 						<option selected>품종</option>
 						<option value = "개" ${cri.type == "개" ? "selected" : ""}>개</option>
 						<option value = "고양이" ${cri.type == "고양이" ? "selected" : ""}>고양이</option>
 					</select>
-					<select name = "location">
+					<select name = "location" style="display: block;">
 						<option selected>지역</option>
 						<option value = "서울" ${cri.location == "서울" ? "selected" : ""}>서울특별시</option>
 						<option value = "부산" ${cri.location == "부산" ? "selected" : ""}>부산광역시</option>

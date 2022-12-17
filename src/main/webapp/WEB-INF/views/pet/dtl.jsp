@@ -119,8 +119,10 @@
 				
 			</div>
 
-			<form action="${cpath}/dtl.do" method = "post">
-			<div class="input-field col s12">
+			<form action="${cpath}/dtl.do" method = "post" style="display: -webkit-inline-box;">
+			<div class="input-field col s12" style="
+    display: -webkit-inline-box;
+			">
 				<select name = "type" style="display: block;">
 					<option selected>품종</option>
 					<option value = "개" ${cri.type == "개" ? "selected" : ""}>개</option>

@@ -233,7 +233,7 @@ body {
 				<c:forEach items="${list}" var="vo">
 					<li><a href="#" class="card"> <img id="brd_img"
 							src="${cpath}/resources/img/brdimg/${vo.brd_img}"
-							class="card__image" />
+							class="card__image" onerror="this.src='${cpath}/resources/img/dog.jpg'"/>
 							<div class="card__overlay">
 								<div class="card__header">
 									<div class="card__header-text">
