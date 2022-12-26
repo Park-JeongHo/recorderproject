@@ -33,7 +33,7 @@
 </head>
 <body>
 <form action="${cpath}/brdRegister.do" method="post" enctype="multipart/form-data">
-<div class="modal fade" id="modalLoginForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+<div class="modal fade" id="modalRegisterForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
   aria-hidden="true" style="background-color: transparent;
     box-shadow: revert;">
   <div class="modal-dialog" role="document">
@@ -70,8 +70,10 @@
 </div>
 </form>
 
+
+
 <div class="text-center">
-  <a href="" class="btn btn-default btn-rounded mb-4" data-toggle="modal" data-target="#modalLoginForm">글쓰기</a>
+  <a href="" class="btn btn-default btn-rounded mb-4" data-toggle="modal" data-target="#modalRegisterForm">글쓰기</a>
 </div>
 
 

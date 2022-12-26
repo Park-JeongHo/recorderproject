@@ -52,7 +52,7 @@
 <script type="text/javascript">
 	$(document).ready(function() {
 
-		$("button").on("click", function(e) {
+		$("#dir").on("click", function(e) {
 			var frm = $("#frm");
 			frm.attr("action", "${cpath}/dtl.do");
 			frm.attr("method", "get");
@@ -78,7 +78,7 @@
 					onclick="location.href='${cpath}/act.do'">감정분석</button>
 				<button type="button" class="btn"
 					onclick="location.href='${cpath}/eye.do'">안구질환</button>
-				<button type="button" class="btn"
+				<button type="button" class="btn btn-outline-info active"
 					onclick="location.href='${cpath}/dtl.do'">상세보기</button>
 				<button type="button" class="btn"
 					onclick="location.href='${cpath}/brd.do'">커뮤니티</button>
@@ -91,7 +91,7 @@
 				<button type="button" class="btn btn-info btn-sm dropdown-toggle"
 					data-toggle="dropdown" style="border-radius: 50px; height: auto;">info</button>
 				<div class="dropdown-menu">
-					<a class="dropdown-item" href="#">검사기록실</a> <a
+					<a class="dropdown-item" href="${cpath}/result.do">검사기록실</a> <a
 						class="dropdown-item" href="${cpath}/logout.do">로그아웃</a>
 				</div>
 			</div>
@@ -143,7 +143,7 @@
 								<h5>관리 방법</h5>
 								<p class="text-black-50">${dtl.dtl_mgmt}</p>
 							</div>
-							<button class="btn btn-success btn-sm">목록</button>
+							<button class="btn btn-success btn-sm" id="dir">목록</button>
 						</div>
 
 						<form id="frm">

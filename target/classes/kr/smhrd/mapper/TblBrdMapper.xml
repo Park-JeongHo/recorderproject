@@ -10,9 +10,16 @@ values(brd_seq.NEXTVAL,#{brd_title},#{brd_content},#{user_id},#{brd_img},sysdate
 </insert>
 
 <select id="brdList" resultType="kr.smhrd.entity.TblBrd">
-select * from tbl_brd order by brd_seq desc
+select * from (select rownum as rn, tbl_brd.* from tbl_brd)
+where rn between #{pageStart} and #{pageEnd}
 </select>
 
+<select id="totalCount" resultType="int" parameterType="kr.smhrd.entity.BrdCriteria">
+	select count(*) from tbl_brd
+</select>
+<select id="selectOne" resultType="kr.smhrd.entity.TblBrd" parameterType="int">
+select * from tbl_brd where brd_seq = #{brd_seq}
+</select>
 
 
 

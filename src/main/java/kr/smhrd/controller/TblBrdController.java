@@ -8,12 +8,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 
 import kr.smhrd.entity.TblAban;
 import kr.smhrd.entity.TblBrd;
+import kr.smhrd.entity.TblDtl;
 import kr.smhrd.mapper.TblBrdMapper;
 
 @Controller
@@ -50,6 +52,15 @@ public class TblBrdController {
 		
 		return "redirect:/brd.do";
 	}
+	@GetMapping("/brdSelect.do/{brd_seq}")   // /5
+	public String get(@PathVariable int brd_seq,Model model) {
+		TblBrd vo = tblBrdMapper.selectOne(brd_seq);
+		
+		
+		model.addAttribute("vo",vo);
+		return "pet/brdSelect";
+	}
+	
 	
 	
 }

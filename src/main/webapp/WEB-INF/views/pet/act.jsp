@@ -96,7 +96,7 @@
 				<button type="button" class="btn btn-info btn-sm dropdown-toggle"
 					data-toggle="dropdown" style="border-radius: 50px; height: auto;">info</button>
 				<div class="dropdown-menu">
-					<a class="dropdown-item" href="#">검사기록실</a> <a
+					<a class="dropdown-item" href="${cpath}/result.do">검사기록실</a> <a
 						class="dropdown-item" href="${cpath}/logout.do">로그아웃</a>
 				</div>
 			</div>

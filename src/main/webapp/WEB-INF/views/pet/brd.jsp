@@ -45,152 +45,163 @@
 <!-- Compiled and minified JavaScript -->
 <script
 	src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-
+<script type="text/javascript">
+$(document).ready(() => {
+	var frm = $("#frm");
+		$(".pagination a").on("click", function(e){
+			e.preventDefault(); // 태그의 본연의 기능을 막는 함수
+			var page = $(this).attr("href");  //attr : 어트리튜브
+			// location.href = "${cpath}/list.do?page="+page;  비추
+			$("#page").val(page);
+			frm.submit(); // 전송
+		});
+	});
+</script>
 
 <title>복실복실</title>
+
+
+
+
+</head>
 <style type="text/css">
-:root {
-  --surface-color: #fff;
-  --curve: 40;
+:root { -
+	-surface-color: #fff; -
+	-curve: 40;
 }
 
-
-
 body {
-  font-family: 'Noto Sans JP', sans-serif;
- 
+	font-family: 'Noto Sans JP', sans-serif;
 }
 
 .cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 2rem;
-  margin: 4rem 5vw;
-  padding: 0;
-  list-style-type: none;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+	gap: 2rem;
+	margin: 4rem 5vw;
+	padding: 0;
+	list-style-type: none;
 }
 
 .card {
-  position: relative;
-  display: block;
-  height: 100%;  
-  border-radius: calc(var(--curve) * 1px);
-  overflow: hidden;
-  text-decoration: none;
+	position: relative;
+	display: block;
+	height: 100%;
+	border-radius: calc(var(- -curve)* 1px);
+	overflow: hidden;
+	text-decoration: none;
 }
 
-.card__image {      
-  width: 100%;
-  height: 100%;
+.card__image {
+	width: 100%;
+	height: 100%;
 }
 
 .card__overlay {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  z-index: 1;      
-    
-  background-color: var(--surface-color);      
-  transform: translateY(100%);
-  transition: .2s ease-in-out;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	z-index: 1;
+	background-color: var(- -surface-color);
+	transform: translateY(100%);
+	transition: .2s ease-in-out;
 }
 
 .card:hover .card__overlay {
-  transform: translateY(0);
+	transform: translateY(0);
 }
 
 .card__header {
-  position: relative;
-  display: flex;
-  align-items: center;
-  gap: 2em;
-  padding: 15px;  
-  background-color: var(--surface-color);
-  transform: translateY(-100%);
-  transition: .2s ease-in-out;
+	position: relative;
+	display: flex;
+	align-items: center;
+	gap: 2em;
+	padding: 15px;
+	background-color: var(- -surface-color);
+	transform: translateY(-100%);
+	transition: .2s ease-in-out;
 }
 
 .card__arc {
-  width: 80px;
-  height: 80px;
-  position: absolute;
-  bottom: 100%;
-  right: 0;      
-  z-index: 1;
+	width: 80px;
+	height: 80px;
+	position: absolute;
+	bottom: 100%;
+	right: 0;
+	z-index: 1;
 }
 
 .card__arc path {
-  fill: var(--surface-color);
-  d: path("M 40 80 c 22 0 40 -22 40 -40 v 40 Z");
-}       
+	fill: var(- -surface-color);
+	d: path("M 40 80 c 22 0 40 -22 40 -40 v 40 Z");
+}
 
 .card:hover .card__header {
-  transform: translateY(0);
+	transform: translateY(0);
 }
 
 .card__thumb {
-  flex-shrink: 0;
-  width: 50px;
-  height: 50px;      
-  border-radius: 50%;      
+	flex-shrink: 0;
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
 }
 
 .card__title {
-  font-size: 1em;
-  margin: 0 0 .3em;
-  color: #6A515E;
+	font-size: 1em;
+	margin: 0 0 .3em;
+	color: #6A515E;
 }
 
 .card__tagline {
-  display: block;
-  margin: 1em 0;
-  font-family: "MockFlowFont";  
-  font-size: .8em; 
-  color: #D7BDCA;  
+	display: block;
+	margin: 1em 0;
+	font-family: "MockFlowFont";
+	font-size: .8em;
+	color: #D7BDCA;
 }
 
 .card__status {
-  font-size: .8em;
-  color: #D7BDCA;
+	font-size: .8em;
+	color: #D7BDCA;
 }
 
 .card__description {
-  padding: 0 2em 2em;
-  margin: 0;
-  color: #D7BDCA;
-  font-family: "MockFlowFont";   
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 3;
-  overflow: hidden;
-      text-overflow: ellipsis;
-    display: inline-block;
-}    
+	padding: 0 2em 2em;
+	margin: 0;
+	color: #D7BDCA;
+	font-family: "MockFlowFont";
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 3;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: inline-block;
+}
 </style>
-</head>
 
 <body style="background: linear-gradient(to right, #FFAFBD, #ffc3a0);">
- <!-- Modal -->
-  <div class="modal fade" id="myModal" role="dialog">
-    <div class="modal-dialog">
-    
-      <!-- Modal content-->
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">×</button>
-          <h4 class="modal-title">Modal Header</h4>
-        </div>
-        <div class="modal-body">
-          <p>Some text in the modal.</p>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        </div>
-      </div>
-      
-    </div>
-  </div>
+	<!-- Modal -->
+	<div class="modal fade" id="myModal" role="dialog">
+		<div class="modal-dialog">
+
+			<!-- Modal content-->
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">×</button>
+					<h4 class="modal-title">Modal Header</h4>
+				</div>
+				<div class="modal-body">
+					<p>Some text in the modal.</p>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				</div>
+			</div>
+
+		</div>
+	</div>
 
 	<div class="container">
 		<div class="divider"></div>
@@ -215,7 +226,7 @@ body {
 				<button type="button" class="btn btn-info btn-sm dropdown-toggle"
 					data-toggle="dropdown" style="border-radius: 50px; height: auto;">info</button>
 				<div class="dropdown-menu">
-					<a class="dropdown-item" href="#">검사기록실</a> <a
+					<a class="dropdown-item" href="${cpath}/result.do">검사기록실</a> <a
 						class="dropdown-item" href="${cpath}/logout.do">로그아웃</a>
 				</div>
 			</div>
@@ -231,9 +242,11 @@ body {
 
 			<ul class="cards">
 				<c:forEach items="${list}" var="vo">
-					<li><a href="#" class="card"> <img id="brd_img"
-							src="${cpath}/resources/img/brdimg/${vo.brd_img}"
-							class="card__image" onerror="this.src='${cpath}/resources/img/dog.jpg'"/>
+					<li><input type="hidden" value="${brd_seq}" name="brd_seq">
+						<a href="${cpath}/brdSelect.do/${vo.brd_seq}"  class="card"> <img
+							id="brd_img" src="${cpath}/resources/img/brdimg/${vo.brd_img}"
+							class="card__image"
+							onerror="this.src='${cpath}/resources/img/dog.jpg'" />
 							<div class="card__overlay">
 								<div class="card__header">
 									<div class="card__header-text">
@@ -241,13 +254,39 @@ body {
 										<span class="card__status" id="brd_date">${vo.brd_date}</span>
 									</div>
 								</div>
-								<p class="card__description" id="brd_content"
-									>${vo.brd_content}</p>
+								<p class="card__description" id="brd_content">${vo.brd_content}</p>
 							</div>
 					</a></li>
 				</c:forEach>
-			</ul>
 
+			</ul>
+			<!-- 페이징 처리 -->
+			<ul class="pagination justify-content-center">
+
+				<c:if test="${brdPageMaker.prev}">
+					<li class="page-item"><a class="page-link"
+						href="${brdPageMaker.startPage-1}">Previous</a></li>
+				</c:if>
+
+				<c:forEach var="pageNum" begin="${brdPageMaker.startPage}"
+					end="${brdPageMaker.endPage}">
+					<li
+						class="page-item ${brdPageMaker.cri.page eq pageNum ? 'active' : ''}"><a
+						class="page-link" href="${pageNum}">${pageNum}</a></li>
+				</c:forEach>
+
+				<c:if test="${brdPageMaker.next}">
+					<li class="page-item"><a class="page-link"
+						href="${brdPageMaker.endPage+1}">Next</a></li>
+				</c:if>
+			</ul>
+			<!-- 페이징 처리 end -->
+			<form id="frm" action="${cpath}/brd.do" method="post">
+				<input type="hidden" id="page" name="page" value="${cri.page}" /> <input
+					type="hidden" id="type" name="type" value="${cri.type}" />
+
+
+			</form>
 
 
 

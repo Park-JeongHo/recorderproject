@@ -49,7 +49,7 @@
 		bList +="<p class='description'>"+obj.aban_area+"</p>";
 		bList +="<p class='description'>"+obj.aban_gender+"</p>";
 		bList +="<p class='description'>"+obj.aban_vrty+"</p>";
-		bList +="<button class='button'>View More</button>";
+		bList += "<button class='button' onclick=\"location.href='${cpath}/aban.do'\">View More</button>";
 		bList +="</div>";
 		bList +="</div>";
 		});

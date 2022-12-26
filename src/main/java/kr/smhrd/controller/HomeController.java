@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import kr.smhrd.entity.AbanCriteria;
 import kr.smhrd.entity.AbanPageMaker;
+import kr.smhrd.entity.BrdCriteria;
+import kr.smhrd.entity.BrdPageMaker;
 import kr.smhrd.entity.TblAban;
 import kr.smhrd.entity.TblBrd;
 import kr.smhrd.entity.TblDtl;
@@ -52,9 +54,15 @@ public class HomeController {
 	}
 
 	@RequestMapping("/brd.do")
-	public String list(Model model) {
+	public String list(@ModelAttribute("cri") BrdCriteria cri,Model model) {
 
-		List<TblBrd> list = tblBrdMapper.brdList();
+		List<TblBrd> list = tblBrdMapper.brdList(cri);
+		// 페이징처리에 필요한 객체 생성
+		BrdPageMaker brdPageMaker = new BrdPageMaker();
+		brdPageMaker.setCri(cri);
+		brdPageMaker.setTotalCount(tblBrdMapper.totalCount(cri));
+		model.addAttribute("brdPageMaker",brdPageMaker);
+		// 객체바인딩(View로 전달할 객체를 특정 메모리에 연결시키는 기술)
 		model.addAttribute("list", list);
 
 		return "pet/brd";
@@ -83,6 +91,11 @@ public class HomeController {
 
 		model.addAttribute("aban_list", list);
 		return "pet/aban";
+	}
+	@RequestMapping("/result.do")
+	public String result() {
+
+		return "pet/result";
 	}
 
 }

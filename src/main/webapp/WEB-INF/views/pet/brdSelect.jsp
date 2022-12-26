@@ -13,10 +13,6 @@
 <link rel="stylesheet" href="${cpath}/resources/css/style.css">
 <link rel="shortcut icon" href="${cpath}/resources/images/logo.png">
 
-<link rel="stylesheet"
-	href="https://unpkg.com/swiper/swiper-bundle.min.css">
-
-
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link
@@ -40,8 +36,7 @@
 <!-- Latest compiled JavaScript -->
 <script
 	src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-<script
-	src="https://cdn.jsdelivr.net/npm/jquery@3.6.1/dist/jquery.slim.min.js"></script>
+
 <script
 	src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
 <script
@@ -51,45 +46,181 @@
 <script
 	src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 <script type="text/javascript">
-	$(document).ready(() => {
-		
-		var frm = $("#frm");
+$(document).ready(() => {
+	var frm = $("#frm");
 		$(".pagination a").on("click", function(e){
-			e.preventDefault(); 
-			var page = $(this).attr("href");
+			e.preventDefault(); // 태그의 본연의 기능을 막는 함수
+			var page = $(this).attr("href");  //attr : 어트리튜브
+			// location.href = "${cpath}/list.do?page="+page;  비추
 			$("#page").val(page);
-			frm.submit();
+			frm.submit(); // 전송
 		});
-		
-		$(".get").on("click", function(e){
-  			e.preventDefault();
-  			var dtl_seq = $(this).attr("href");
-  			frm.attr("action", "${cpath}/get.do");
-  			frm.attr("method", "get");
-  			var tag = "<input type = 'hidden' name = 'dtl_seq' value = '"+dtl_seq+"'>";
-  			frm.append(tag);
-  			frm.submit();
-  		});
 	});
-
 </script>
 
 <title>복실복실</title>
+
+
+
+
+</head>
+<style type="text/css">
+:root { -
+	-surface-color: #fff; -
+	-curve: 40;
+}
+
+body {
+	font-family: 'Noto Sans JP', sans-serif;
+}
+
+.cards {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+	gap: 2rem;
+	margin: 4rem 5vw;
+	padding: 0;
+	list-style-type: none;
+}
+
+.card {
+	position: relative;
+	display: block;
+	height: 100%;
+	border-radius: calc(var(- -curve)* 1px);
+	overflow: hidden;
+	text-decoration: none;
+}
+
+.card__image {
+	width: 100%;
+	height: 100%;
+}
+
+.card__overlay {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	z-index: 1;
+	background-color: var(- -surface-color);
+	transform: translateY(100%);
+	transition: .2s ease-in-out;
+}
+
+.card:hover .card__overlay {
+	transform: translateY(0);
+}
+
+.card__header {
+	position: relative;
+	display: flex;
+	align-items: center;
+	gap: 2em;
+	padding: 15px;
+	background-color: var(- -surface-color);
+	transform: translateY(-100%);
+	transition: .2s ease-in-out;
+}
+
+.card__arc {
+	width: 80px;
+	height: 80px;
+	position: absolute;
+	bottom: 100%;
+	right: 0;
+	z-index: 1;
+}
+
+.card__arc path {
+	fill: var(- -surface-color);
+	d: path("M 40 80 c 22 0 40 -22 40 -40 v 40 Z");
+}
+
+.card:hover .card__header {
+	transform: translateY(0);
+}
+
+.card__thumb {
+	flex-shrink: 0;
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+}
+
+.card__title {
+	font-size: 1em;
+	margin: 0 0 .3em;
+	color: #6A515E;
+}
+
+.card__tagline {
+	display: block;
+	margin: 1em 0;
+	font-family: "MockFlowFont";
+	font-size: .8em;
+	color: #D7BDCA;
+}
+
+.card__status {
+	font-size: .8em;
+	color: #D7BDCA;
+}
+
+.card__description {
+	padding: 0 2em 2em;
+	margin: 0;
+	color: #D7BDCA;
+	font-family: "MockFlowFont";
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 3;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: inline-block;
+}
+</style>
+
 <body style="background: linear-gradient(to right, #FFAFBD, #ffc3a0);">
+	<!-- Modal -->
+	<div class="modal fade" id="myModal" role="dialog">
+		<div class="modal-dialog">
+
+			<!-- Modal content-->
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">×</button>
+					<h4 class="modal-title">Modal Header</h4>
+				</div>
+				<div class="modal-body">
+					<p>Some text in the modal.</p>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				</div>
+			</div>
+
+		</div>
+	</div>
 
 	<div class="container">
 		<div class="divider"></div>
 		<!-- header -->
 		<div class="section 1">
-			<a href="${cpath}/home.do"><img src="${cpath}/resources/img/logo.png"
-				style="width: 100px;"></a>
+			<a href="${cpath}/home.do"><img
+				src="${cpath}/resources/img/logo.png" style="width: 100px;"></a>
 			<div class="btn-group"
 				style="padding-left: 300px; padding-top: 70px;">
-				<button type="button" class="btn" onclick="location.href='${cpath}/act.do'">감정분석</button>
-				<button type="button" class="btn" onclick="location.href='${cpath}/eye.do'">안구질환</button>
-				<button type="button" class="btn btn-outline-info active" onclick="location.href='${cpath}/dtl.do'">상세보기</button>
-				<button type="button" class="btn" onclick="location.href='${cpath}/brd.do'">커뮤니티</button>
-				<button type="button" class="btn" onclick="location.href='${cpath}/aban.do'">유기동물</button>
+				<button type="button" class="btn"
+					onclick="location.href='${cpath}/act.do'">감정분석</button>
+				<button type="button" class="btn"
+					onclick="location.href='${cpath}/eye.do'">안구질환</button>
+				<button type="button" class="btn"
+					onclick="location.href='${cpath}/dtl.do'">상세보기</button>
+				<button type="button" class="btn btn-outline-info active"
+					onclick="location.href='${cpath}/brd.do'">커뮤니티</button>
+				<button type="button" class="btn"
+					onclick="location.href='${cpath}/aban.do'">유기동물</button>
 			</div>
 			<div class="dropdown" style="float: right; margin-top: 35px;">
 				<button type="button" class="btn btn-info btn-sm dropdown-toggle"
@@ -99,96 +230,45 @@
 						class="dropdown-item" href="${cpath}/logout.do">로그아웃</a>
 				</div>
 			</div>
-			<div class="chip" style="float: right; margin-top: 35px; background: beige;">
+			<div class="chip"
+				style="float: right; margin-top: 35px; background: beige;">
 				<img src="${cpath}/resources/img/pf.png" alt="Contact Person">
 				${m.user_name}님 환영합니다
 			</div>
 		</div>
 		<div class="divider"></div>
-		
-		<div class="section 2">
-		<div class="section sec-testimonials">
-		<div class="container">
-			
-			<div class="row mb-5 align-items-center">
 
-				<div class="col-md-6">
-					<h2 class="font-weight-bold heading text-primary mb-4 mb-md-0">질병정보를 알아봅시다</h2>
-				</div>
+		<div class="section 2" style="box-sizing: content-box;">
 
-				
-			</div>
-
-			<form action="${cpath}/dtl.do" method = "post" style="display: -webkit-inline-box;">
-			<div class="input-field col s12" style="
-    display: -webkit-inline-box;
-			">
-				<select name = "type" style="display: block;">
-					<option selected>품종</option>
-					<option value = "개" ${cri.type == "개" ? "selected" : ""}>개</option>
-					<option value = "고양이" ${cri.type == "고양이" ? "selected" : ""}>고양이</option>
-				</select>
-				<%--  <input type = "text" name = "keyword" value = "${cri.keyword}"> --%>
-				<button class = "btn btn-success btn-sm" type = "submit">검색</button>
-			</div>
-			</form>
-			<br>
-			<div class="row">
-				<div class="col-lg-4"></div>
-			</div>
-			<c:forEach var="list" items="${DtlList}">
-			<table class = "table table-striped">
-				<tr>
-					<td width = "500">
-					<div class="testimonial-slider-wrap">
-						<div class="testimonial-slider">
-							<div class="item">
-								<div class="testimonial">
-								<a class = "get" href = "${list.dtl_seq}">
-									<c:if test="${list.dtl_clsfc == 0}">
-									<img src="${cpath}/resources/img/dog.jpg" alt="Image"
-										class="img-fluid rounded-circle w-50 mb-1">
-									</c:if>
-									<c:if test="${list.dtl_clsfc == 1}">
-										<img src="${cpath}/resources/img/cat.jpg" alt="Image"
-										class="img-fluid rounded-circle w-50 mb-1">
-									</c:if>
-								</a>
-								</div>
-							</div>
-						</div>
-					</div>
-				</td>
-				<td>
-					<h3 class="h5 text-primary mb-4" style="position: relative; top: 60px;">
-					${list.dtl_title}
-					</h3>
-					<p style = "position: relative; top: 50px;">주의! 혐오스러울수 있습니다!!</p>
-				</td>
-			</tr>
-			</table>
-			</c:forEach>
-		</div>
-	</div>
-	<!-- 페이징 처리 -->
-    	<ul class="pagination justify-content-center">
-			<c:if test="${AbanPageMaker.prev}">
-				<li class="page-item"><a class="page-link" href="${AbanPageMaker.startPage - 1}">Previous</a></li>
-			</c:if>
-			<c:forEach var = "pageNum" begin="${AbanPageMaker.startPage}" end = "${AbanPageMaker.endPage}">
-				<li class="page-item ${AbanPageMaker.cri.page eq pageNum ? 'active': ''}"><a class="page-link" href="${pageNum}">${pageNum}</a></li>
-			</c:forEach>
-			<c:if test="${AbanPageMaker.next}">
-				<li class="page-item"><a class="page-link" href="${AbanPageMaker.endPage + 1}">Next</a></li>
-			</c:if>
-		</ul>
-		<!-- 페이징처리 끝 -->
-	<form action="${cpath}/dtl.do" method = "post" id = "frm">
-		<input type = "hidden" id = "page" name = "page" value = "${cri.page}">
-		<input type = "hidden" name = "type" value = "${cri.type}">
-		<input type = "hidden" name = "keyword" value = "${cri.keyword}">
-	</form>
-		
+			<table class="table">
+								<tr>
+									<td style="width: 100px">제목</td>
+									<td>${vo.brd_title}</td>
+								</tr>
+								<tr>
+									<td>내용</td>
+									<td>${fn:replace(vo.brd_content,replaceChar,"<br>")}</td>
+								</tr>
+								<tr>
+									<td>이미지</td>
+									<td><img
+							id="brd_img" src="${cpath}/resources/img/brdimg/${vo.brd_img}"
+							class="card__image"
+							onerror="this.src='${cpath}/resources/img/dog.jpg'" />
+							<div class="card__overlay"></td>
+								</tr>
+								<tr>
+									
+								</tr>
+								<tr>
+									<%-- <td colspan="2" style="text-align: center">
+										<button data-oper="reply" class="btn btn-sm btn-info" ${!empty m.memId  ? '':'disabled'}>답글</button>
+										<button data-oper="update" class="btn btn-sm btn-primary" ${m.memId eq vo.memId ? '':'disabled'}>수정</button>
+										<button data-oper="delete" class="btn btn-sm btn-warning" ${m.memId eq vo.memId ? '':'disabled'}>삭제</button>
+										<button data-oper="list" class="btn btn-sm btn-success">목록</button>
+									</td> --%>
+								</tr>
+							</table>
 
 		</div>
 
@@ -213,7 +293,8 @@
 					<div class="widget">
 						<h3>Find Us</h3>
 						<ul class="list-unstyled float-start links">
-							<li><img id="map" src="${cpath}/resources/img/map.PNG" style="width: 360px; height: 220px; border: solid 1px;"></li>
+							<li><img id="map" src="${cpath}/resources/img/map.PNG"
+								style="width: 360px; height: 220px; border: solid 1px;"></li>
 
 						</ul>
 
