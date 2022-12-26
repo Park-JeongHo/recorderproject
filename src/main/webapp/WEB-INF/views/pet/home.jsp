@@ -53,7 +53,6 @@
 <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=	62582f56480dc12ba65e0f4ebe9c2204&libraries=services"></script>
 
 
-
 <title>복실복실</title>
 <body style="background: linear-gradient(to right, #FFAFBD, #ffc3a0);">
 
@@ -64,16 +63,17 @@
 			<a href="${cpath}/home.do"><img
 				src="${cpath}/resources/img/logo.png" style="width: 100px;"></a>
 			<div class="btn-group"
-				style="padding-left: 300px; padding-top: 70px;">
-				<button type="button" class="btn"
+				style="padding-left: 20px;
+    padding-top: 70px;">
+				<button type="button" class="btn" id = "btn-head"
 					onclick="location.href='${cpath}/act.do'">감정분석</button>
-				<button type="button" class="btn"
+				<button type="button" class="btn" id ="btn-head"
 					onclick="location.href='${cpath}/eye.do'">안구질환</button>
-				<button type="button" class="btn"
+				<button type="button" class="btn" id ="btn-head"
 					onclick="location.href='${cpath}/dtl.do'">상세보기</button>
-				<button type="button" class="btn"
+				<button type="button" class="btn" id ="btn-head"
 					onclick="location.href='${cpath}/brd.do'">커뮤니티</button>
-				<button type="button" class="btn"
+				<button type="button" class="btn" id ="btn-head"
 					onclick="location.href='${cpath}/aban.do'">유기동물</button>
 			</div>
 
@@ -97,7 +97,9 @@
 
 		<div class="divider"></div>
 		<!-- content-1 -->
-		<div>pet news</div>
+		<div style="    font-family: Katuri;
+    font-size: xxx-large;
+    text-align: center;">pet news</div>
 		<div class="section 2">
 
 			<input type="radio" name="slide" id="slide01" checked

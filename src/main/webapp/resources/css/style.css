@@ -198,4 +198,28 @@
 	.pie_info > li {margin-right: 20px;}
 }
 
+@font-face {
+    font-family: 'Katuri';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_13@1.0/Katuri.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+#btn-head{
+	
+font-size: larger;
+    box-shadow: none;
+}
+#btn-head:hover{
+	
+
+    
+}
+
+@font-face {
+    font-family: 'KyoboHand';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@1.0/KyoboHand.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
 
