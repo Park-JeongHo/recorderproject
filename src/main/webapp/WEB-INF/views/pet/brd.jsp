@@ -253,7 +253,7 @@ body {
 						<a href="${cpath}/brdSelect.do/${vo.brd_seq}"  class="card"> <img
 							id="brd_img" src="${cpath}/resources/img/brdimg/${vo.brd_img}"
 							class="card__image"
-							onerror="this.src='${cpath}/resources/img/dog.jpg'" />
+							onerror="this.src='${cpath}/resources/img/dog.jpg'" style="width: 215px;"/>
 							<div class="card__overlay">
 								<div class="card__header">
 									<div class="card__header-text">
