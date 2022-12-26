@@ -45,8 +45,9 @@
 <!-- Compiled and minified JavaScript -->
 <script
 	src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-	<!-- 카카오api -->
-<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=	62582f56480dc12ba65e0f4ebe9c2204&libraries=services"></script>
+<!-- 카카오api -->
+<script type="text/javascript"
+	src="//dapi.kakao.com/v2/maps/sdk.js?appkey=	62582f56480dc12ba65e0f4ebe9c2204&libraries=services"></script>
 <script type="text/javascript">
 $(document).ready(() => {
 	var frm = $("#frm");
@@ -238,39 +239,42 @@ body {
 				${m.user_name}님 환영합니다
 			</div>
 		</div>
-		<div class="divider"></div>
+		
 
 		<div class="section 2" style="box-sizing: content-box;">
 
 			<table class="table">
-								<tr>
-									<td style="width: 100px">제목</td>
-									<td>${vo.brd_title}</td>
-								</tr>
-								<tr>
-									<td>내용</td>
-									<td>${fn:replace(vo.brd_content,replaceChar,"<br>")}</td>
-								</tr>
-								<tr>
-									<td>이미지</td>
-									<td><img
-							id="brd_img" src="${cpath}/resources/img/brdimg/${vo.brd_img}"
-							class="card__image"
-							onerror="this.src='${cpath}/resources/img/dog.jpg'" />
-							<div class="card__overlay"></td>
-								</tr>
-								<tr>
-									
-								</tr>
-								<tr>
-									<%-- <td colspan="2" style="text-align: center">
+				<tr>
+					<td style="width: 100px">제목</td>
+					<td>${vo.brd_title}</td>
+				</tr>
+				<tr>
+					<td>내용</td>
+					<td>${fn:replace(vo.brd_content,replaceChar,"<br>")}</td>
+				</tr>
+				<tr>
+					<td>이미지</td>
+					<td><img id="brd_img"
+						src="${cpath}/resources/img/brdimg/${vo.brd_img}"
+						class="card__image"
+						onerror="this.src='${cpath}/resources/img/dog.jpg'" style="width: 300px;"/>
+						<button style="position: relative;
+    top: 130px;" type="button" class="btn btn-outline-info"
+						onclick="location.href='${cpath}/brd.do'">목록</button>
+						<div class="card__overlay"></td>
+				</tr>
+				<tr>
+				</tr>
+				<tr>
+					
+					<%-- <td colspan="2" style="text-align: center">
 										<button data-oper="reply" class="btn btn-sm btn-info" ${!empty m.memId  ? '':'disabled'}>답글</button>
 										<button data-oper="update" class="btn btn-sm btn-primary" ${m.memId eq vo.memId ? '':'disabled'}>수정</button>
 										<button data-oper="delete" class="btn btn-sm btn-warning" ${m.memId eq vo.memId ? '':'disabled'}>삭제</button>
 										<button data-oper="list" class="btn btn-sm btn-success">목록</button>
 									</td> --%>
-								</tr>
-							</table>
+				</tr>
+			</table>
 
 		</div>
 
@@ -294,7 +298,8 @@ body {
 				<div class="col-lg-4">
 					<div class="widget">
 						<h3>Find Us</h3>
-					<div id="map2" style="width: 360px; height: 220px; border: solid 1px;"></div>
+						<div id="map2"
+							style="width: 360px; height: 220px; border: solid 1px;"></div>
 						<ul class="list-unstyled float-start links">
 							<li></li>
 
