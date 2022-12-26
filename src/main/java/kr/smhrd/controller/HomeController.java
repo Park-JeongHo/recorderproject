@@ -92,10 +92,18 @@ public class HomeController {
 		model.addAttribute("aban_list", list);
 		return "pet/aban";
 	}
+
 	@RequestMapping("/result.do")
 	public String result() {
 
 		return "pet/result";
+	}
+	
+	@RequestMapping("/act2.do")
+	public String act2() {
+
+		return "pet/act2";
+
 	}
 
 }
