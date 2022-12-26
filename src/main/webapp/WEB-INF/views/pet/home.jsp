@@ -65,15 +65,15 @@
 			<div class="btn-group"
 				style="padding-left: 20px;
     padding-top: 70px;">
-				<button type="button" class="btn"
+				<button type="button" class="btn" id = "btn-head"
 					onclick="location.href='${cpath}/act.do'">감정분석</button>
-				<button type="button" class="btn"
+				<button type="button" class="btn" id ="btn-head"
 					onclick="location.href='${cpath}/eye.do'">안구질환</button>
-				<button type="button" class="btn"
+				<button type="button" class="btn" id ="btn-head"
 					onclick="location.href='${cpath}/dtl.do'">상세보기</button>
-				<button type="button" class="btn"
+				<button type="button" class="btn" id ="btn-head"
 					onclick="location.href='${cpath}/brd.do'">커뮤니티</button>
-				<button type="button" class="btn"
+				<button type="button" class="btn" id ="btn-head"
 					onclick="location.href='${cpath}/aban.do'">유기동물</button>
 			</div>
 
