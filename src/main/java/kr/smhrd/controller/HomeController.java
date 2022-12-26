@@ -84,5 +84,11 @@ public class HomeController {
 		model.addAttribute("aban_list", list);
 		return "pet/aban";
 	}
+	
+	@RequestMapping("/act2.do")
+	public String act2() {
+
+		return "pet/act2";
+	}
 
 }
