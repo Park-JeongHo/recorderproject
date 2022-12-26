@@ -78,6 +78,8 @@
 <!-- Compiled and minified JavaScript -->
 <script
 	src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<!-- 카카오api -->
+<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=	62582f56480dc12ba65e0f4ebe9c2204&libraries=services"></script>
 <script>
 $(document).ready(function(){ 
     $("#submitButton").click(function(){
@@ -301,11 +303,11 @@ $(document).ready(function(){
 					<div class="col-lg-4">
 						<div class="widget">
 							<h3>Find Us</h3>
-							<ul class="list-unstyled float-start links">
-								<li><img id="map" src="${cpath}/resources/img/map.PNG"
-									style="width: 360px; height: 220px; border: solid 1px;"></li>
+					<div id="map2" style="width: 360px; height: 220px; border: solid 1px;"></div>
+						<ul class="list-unstyled float-start links">
+							<li></li>
 
-							</ul>
+						</ul>
 
 						</div>
 						<!-- /.widget -->
@@ -341,4 +343,24 @@ $(document).ready(function(){
 		</div>
 </body>
 <script src="${cpath}/resources/js/eye.js"></script>
+
+<script type="text/javascript">
+
+var container = document.getElementById('map2');
+var option = {
+		 center : new kakao.maps.LatLng(35.1104947, 126.8777619),
+		 level : 3
+};
+
+ var map2 = new kakao.maps.Map(container, option);
+ 
+ var markerPosition = new kakao.maps.LatLng(35.1104947, 126.8777619);
+ 
+ var marker = new kakao.maps.Marker({
+	 position : markerPosition
+ });
+ 
+ marker.setMap(map2);
+	
+</script>
 </html>

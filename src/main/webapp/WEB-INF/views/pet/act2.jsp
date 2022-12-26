@@ -53,6 +53,8 @@
 
 
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<!-- 카카오api -->
+<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=	62582f56480dc12ba65e0f4ebe9c2204&libraries=services"></script>
 <script type="text/javascript">
   google.charts.load('current', {'packages':['corechart']});
   google.charts.setOnLoadCallback(drawChart);
@@ -186,8 +188,9 @@
 				<div class="col-lg-4">
 					<div class="widget">
 						<h3>Find Us</h3>
+						<div id="map2" style="width: 360px; height: 220px; border: solid 1px;"></div>
 						<ul class="list-unstyled float-start links">
-							<li><지도></li>
+							<li></li>
 
 						</ul>
 
@@ -227,5 +230,24 @@
 
 
 </body>
+<script type="text/javascript">
+
+var container = document.getElementById('map2');
+var option = {
+		 center : new kakao.maps.LatLng(35.1104947, 126.8777619),
+		 level : 3
+};
+
+ var map2 = new kakao.maps.Map(container, option);
+ 
+ var markerPosition = new kakao.maps.LatLng(35.1104947, 126.8777619);
+ 
+ var marker = new kakao.maps.Marker({
+	 position : markerPosition
+ });
+ 
+ marker.setMap(map2);
+	
+</script>
 
 </html>

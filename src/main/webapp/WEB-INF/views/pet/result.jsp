@@ -50,6 +50,8 @@
 <!-- Compiled and minified JavaScript -->
 <script
 	src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<!-- 카카오api -->
+<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=	62582f56480dc12ba65e0f4ebe9c2204&libraries=services"></script>
 
 
 <title>복실복실</title>
@@ -59,20 +61,15 @@
 		<div class="divider"></div>
 		<!-- header -->
 		<div class="section 1">
-			<a href="${cpath}/home.do"><img
-				src="${cpath}/resources/img/logo.png" style="width: 100px;"></a>
+			<a href="${cpath}/home.do"><img src="${cpath}/resources/img/logo.png"
+				style="width: 100px;"></a>
 			<div class="btn-group"
 				style="padding-left: 300px; padding-top: 70px;">
-				<button type="button" class="btn"
-					onclick="location.href='${cpath}/act.do'">감정분석</button>
-				<button type="button" class="btn"
-					onclick="location.href='${cpath}/eye.do'">안구질환</button>
-				<button type="button" class="btn"
-					onclick="location.href='${cpath}/dtl.do'">상세보기</button>
-				<button type="button" class="btn"
-					onclick="location.href='${cpath}/brd.do'">커뮤니티</button>
-				<button type="button" class="btn"
-					onclick="location.href='${cpath}/aban.do'">유기동물</button>
+				<button type="button" class="btn" onclick="location.href='${cpath}/act.do'">감정분석</button>
+				<button type="button" class="btn" onclick="location.href='${cpath}/eye.do'">안구질환</button>
+				<button type="button" class="btn" onclick="location.href='${cpath}/dtl.do'">상세보기</button>
+				<button type="button" class="btn" onclick="location.href='${cpath}/brd.do'">커뮤니티</button>
+				<button type="button" class="btn" onclick="location.href='${cpath}/aban.do'">유기동물</button>
 			</div>
 			<div class="dropdown" style="float: right; margin-top: 35px;">
 				<button type="button" class="btn btn-info btn-sm dropdown-toggle"
@@ -82,28 +79,26 @@
 						class="dropdown-item" href="${cpath}/logout.do">로그아웃</a>
 				</div>
 			</div>
-			<div class="chip"
-				style="float: right; margin-top: 35px; background: beige;">
+			<div class="chip" style="float: right; margin-top: 35px; background: beige;">
 				<img src="${cpath}/resources/img/pf.png" alt="Contact Person">
 				${m.user_name}님 환영합니다
 			</div>
 		</div>
 		<div class="divider"></div>
-
+		
 		<div class="section 2">
-			<h2>검사기록실</h2>
-
-			<table class="table table-bordered">
-				<thead>
-					<tr>
-						<th>날짜</th>
-						<th>검사 종류</th>
-						<th>반려동물 종류</th>
-					</tr>
-				</thead>
-				<tbody>
-				</tbody>
-				</table>
+		<h2>검사기록실</h2>
+		
+	<table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>날짜</th>
+        <th>검사 종류</th>
+        <th>반려동물 종류</th>
+      </tr>
+    </thead>
+    <tbody>
+    </tbody>
 		</div>
 
 		<!-- footer -->
@@ -126,12 +121,11 @@
 				<div class="col-lg-4">
 					<div class="widget">
 						<h3>Find Us</h3>
+						<div id="map2" style="width: 360px; height: 220px; border: solid 1px;"></div>
 						<ul class="list-unstyled float-start links">
-							<li><img id="map" src="${cpath}/resources/img/map.PNG"
-								style="width: 360px; height: 220px; border: solid 1px;"></li>
+							<li></li>
 
 						</ul>
-
 					</div>
 					<!-- /.widget -->
 				</div>
@@ -168,4 +162,23 @@
 
 
 </body>
+<script type="text/javascript">
+
+var container = document.getElementById('map2');
+var option = {
+		 center : new kakao.maps.LatLng(35.1104947, 126.8777619),
+		 level : 3
+};
+
+ var map2 = new kakao.maps.Map(container, option);
+ 
+ var markerPosition = new kakao.maps.LatLng(35.1104947, 126.8777619);
+ 
+ var marker = new kakao.maps.Marker({
+	 position : markerPosition
+ });
+ 
+ marker.setMap(map2);
+	
+</script>
 </html>
