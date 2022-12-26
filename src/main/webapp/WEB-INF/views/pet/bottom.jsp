@@ -95,7 +95,9 @@
 	</script>
 </head>
 <body>
-	<div>지금 가족이 되어주세요</div>
+	<div style="font-family: Katuri;
+    font-size: xxx-large;
+    text-align: center;">지금 가족이 되어주세요</div>
 	<div class="slide-container swiper">
 
 
