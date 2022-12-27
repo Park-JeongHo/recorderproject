@@ -205,15 +205,5 @@ public class PetEyeController {
 	    return result1;
 	}
 	
-	@RequestMapping("/hospital.do")
-	public String hospital() {
-		
-		return "pet/hospital";
-	}
-	
-	@RequestMapping("/eye2.do")
-	public String eye2() {
-		
-		return "pet/eye2";
-	}
+
 }

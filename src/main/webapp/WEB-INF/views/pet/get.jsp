@@ -162,16 +162,19 @@
 						<div class="item">
 							<div class="testimonial" style="position: relative; left: 200px;">
 								<img src="${cpath}/resources/img/disease/${dtl.dtl_seq}.jpg"
-									alt="Image" style="width: 20%; border-radius: 130px;">
+									alt="Image"
+									style="width: 20%; border-radius: 130px; position: relative; left: 20em;">
 
 								<h3
-									style="position: relative; top: 10px px; font-family: 'KyoboHand'; font-size: xx-large; color: brown;">${dtl.dtl_title}</h3>
-								<blockquote>
-									<p style="font-family: 'KyoboHand';font-size: x-large;">&ldquo;${dtl.dtl_info}&rdquo;</p>
+									style="position: relative; font-family: 'Katuri'; font-size: xx-large; color: brown; right: 6em;">${dtl.dtl_title}</h3>
+								<blockquote style="position: relative; right: 15em;">
+									<p style="font-family: 'KyoboHand'; font-size: x-large;">&ldquo;${dtl.dtl_info}&rdquo;</p>
 								</blockquote>
-								<h5 style="font-family: 'KyoboHand';
-    font-size: xx-large; color: brown;">관리 방법</h5>
-								<p class="text-black-50" style="font-family: 'KyoboHand';font-size: x-large;">${dtl.dtl_mgmt}</p>
+								<h5
+									style="font-family: katuri; font-size: xx-large; color: brown; position: relative; right: 6em;">관리
+									방법</h5>
+								<p class="text-black-50"
+									style="font-family: 'KyoboHand'; font-size: x-large; position: relative; right: 8em;">${dtl.dtl_mgmt}</p>
 							</div>
 							<button class="btn" id="dir"
 								style="position: relative; left: 610px;">목록으로</button>

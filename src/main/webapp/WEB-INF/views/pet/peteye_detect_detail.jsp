@@ -32,6 +32,14 @@
 	</p>
 	<h2 style="font-family: katuri; align-self: center;">판별 결과</h2>
 	<div id="result"></div>
+	<div style="align-self: center;">
+		<button type="button"
+			style="background-color: lemonchiffon; border: none; width: 8em; height: 3em; font-size: large; font-family: KyoboHand;" onclick="location.href='http://localhost:8081/controller/get.do?page=1&type=%EA%B0%9C&keyword=&dtl_seq=8'">질병
+			상세정보</button>
+		<button type ="button"
+			style="background-color: lemonchiffon; border: none; width: 8em; height: 3em; font-size: large; font-family: KyoboHand;" onclick="location.href='hospital.do'">병원
+			찾기</button>
+	</div>
 </body>
 
 <script>
