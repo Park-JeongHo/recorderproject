@@ -42,10 +42,7 @@ function DropFile(dropAreaId, fileListId) {
 
  
 
-  dropArea.addEventListener("dragenter", highlight, false);
-  dropArea.addEventListener("dragover", highlight, false);
-  dropArea.addEventListener("dragleave", unhighlight, false);
-  dropArea.addEventListener("drop", handleDrop, false);
+  
 
   return {
     handleFiles

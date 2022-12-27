@@ -260,53 +260,10 @@ font-family: 'KyoboHand';">Next</button>
 					<!-- Modal content-->
 					<form method="post" enctype="multipart/form-data">
 						<div class="modal-content">
-							<div class="modal-header">
-								<button type="button" class="close" data-dismiss="modal">&times;</button>
+							
 
-							</div>
-							<div class="modal-body">
-								<div id="root">
-									<h2 class="title">File Upload</h2>
-									<hr>
-									<div class="contents">
-										<div class="upload-box"
-											style="position: relative; left: 185px;">
-
-											<div id="drop-file" class="drag-file">
-												<img
-													src="https://img.icons8.com/pastel-glyph/2x/image-file.png"
-													alt="파일 아이콘" class="image">
-												<p class="message">Drag files to upload</p>
-											</div>
-											<label class="file-label" for="chooseFile">Choose
-												File</label> <input class="file" id="chooseFile" type="file"
-												accept="image/*" onchange="loadFile(this)"
-												onchange="dropFile.handleFiles(this.files)">
-
-										</div>
-
-										<div id="files" class="files">
-											<div class="file"></div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="container">
-								<div class="image-upload" id="image-upload">
-
-									<div class="fileContainer">
-										<div class="fileInput">
-											<p>FILE NAME:</p>
-											<p id="fileName"></p>
-										</div>
-										<div class="buttonContainer">
-											<button class="submitButton" id="submitButton" type="button" onclick="location.href='${cpath}/act2.do'">SUBMIT</button>
-										</div>
-									</div>
-								</div>
-
-
-							</div>
+						<jsp:include page="petemotion_detect.jsp"></jsp:include>
+							
 						</div>
 				</div>
 				</form>
