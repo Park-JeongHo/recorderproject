@@ -105,5 +105,16 @@ public class HomeController {
 		return "pet/act2";
 
 	}
+	
+	@RequestMapping("/petemotion.do")
+	public String petemotion() {
+
+		return "pet/petemotion_detect";
+	}
+	@RequestMapping("/peteye_detect_detail.do")
+	public String peteye_detect_detail() {
+
+		return "pet/peteye_detect_detail";
+	}
 
 }
