@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
@@ -10,16 +10,28 @@
 <meta charset="UTF-8" />
 </head>
 <body>
-   <h1>애완동물 안구질환 판별 인공지능</h1>
-      <p>이미지 파일:</p>
-      <p><input type = "file" id="upload_image_file" onchange="readURL(this);" /></p>
-      <p><input type = "button" value = "안구질환 판별" id="peteye_detect" /></p>
-   <hr>
-   <h2>업로드 이미지</h2>
-   <img id="upload_image" style="max-width:500px;max-height:500px;"/>
-   <hr>
-   <h2>판별 결과</h2>
-   <div id="result"></div>
+	<h1 style="font-family: katuri; align-self: center;">애완동물 안구질환 판별
+		인공지능</h1>
+	<p style="font-family: KyoboHand; font-size: x-large;">이미지 파일을 선택해
+		주세요 !</p>
+	<p>
+		<input type="file" id="upload_image_file" onchange="readURL(this);"
+			style="font-family: KyoboHand;" />
+	</p>
+
+
+
+	<hr>
+	<h2 style="font-family: katuri; align-self: center;">업로드 이미지</h2>
+	<img id="upload_image"
+		style="max-width: 250px; max-height: 250px; align-self: center;" />
+	<hr>
+	<p>
+		<input type="button" value="안구질환 판별하기" id="peteye_detect"
+			style="font-family: KyoboHand; font-family: KyoboHand; position: relative; left: 11em; top: -1em; background-color: lemonchiffon; border: none; width: 8em; height: 3em; font-size: large;" />
+	</p>
+	<h2 style="font-family: katuri; align-self: center;">판별 결과</h2>
+	<div id="result"></div>
 </body>
 
 <script>

@@ -79,28 +79,27 @@
 <script
 	src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 <!-- 카카오api -->
-<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=	62582f56480dc12ba65e0f4ebe9c2204&libraries=services"></script>
+<script type="text/javascript"
+	src="//dapi.kakao.com/v2/maps/sdk.js?appkey=	62582f56480dc12ba65e0f4ebe9c2204&libraries=services"></script>
 <script>
-$(document).ready(function(){ 
-    $("#submitButton").click(function(){
-        $(".close").click();
-    });
-    
-});
+	$(document).ready(function() {
+		$("#submitButton").click(function() {
+			$(".close").click();
+		});
+
+	});
 </script>
 <style type="text/css">
-#btn-head{
-	
-font-size: larger;
-    box-shadow: none;
-    font-family: 'KyoboHand'
+#btn-head {
+	font-size: larger;
+	box-shadow: none;
+	font-family: 'KyoboHand'
 }
-#btn-head:hover{
-	
-background-color: #ff7f50;
-color: white;
-font-family: 'KyoboHand'
-    
+
+#btn-head:hover {
+	background-color: #ff7f50;
+	color: white;
+	font-family: 'KyoboHand'
 }
 </style>
 <title>복실복실</title>
@@ -112,19 +111,17 @@ font-family: 'KyoboHand'
 		<div class="section 1">
 			<a href="${cpath}/home.do"><img
 				src="${cpath}/resources/img/logo.png" style="width: 100px;"></a>
-			<div class="btn-group"
-				style="padding-left: 20px; padding-top: 70px;">
-				<button type="button" class="btn" id = "btn-head"
+			<div class="btn-group" style="padding-left: 20px; padding-top: 70px;">
+				<button type="button" class="btn" id="btn-head"
 					onclick="location.href='${cpath}/act.do'">감정분석</button>
-				<button type="button" class="btn" id ="btn-head"
-					onclick="location.href='${cpath}/eye.do'"  style="background-color: #ff7f50;
-color: white;
-font-family: 'KyoboHand';">안구질환</button>
-				<button type="button" class="btn" id ="btn-head"
+				<button type="button" class="btn" id="btn-head"
+					onclick="location.href='${cpath}/eye.do'"
+					style="background-color: #ff7f50; color: white; font-family: 'KyoboHand';">안구질환</button>
+				<button type="button" class="btn" id="btn-head"
 					onclick="location.href='${cpath}/dtl.do'">상세보기</button>
-				<button type="button" class="btn" id ="btn-head"
+				<button type="button" class="btn" id="btn-head"
 					onclick="location.href='${cpath}/brd.do'">커뮤니티</button>
-				<button type="button" class="btn" id ="btn-head"
+				<button type="button" class="btn" id="btn-head"
 					onclick="location.href='${cpath}/aban.do'">유기동물</button>
 			</div>
 			<div class="dropdown" style="float: right; margin-top: 35px;">
@@ -144,10 +141,9 @@ font-family: 'KyoboHand';">안구질환</button>
 		</div>
 		<div class="divider"></div>
 		<br> <br>
-		<h1 style="text-align: center; font-family: Katuri;
-    font-size: xxx-large;
-    text-align: center;" id="eye_title">검사하는 반려 동물의 종은
-			무엇입니까?</h1>
+		<h1
+			style="text-align: center; font-family: Katuri; font-size: xxx-large; text-align: center;"
+			id="eye_title">검사하는 반려 동물의 종은 무엇입니까?</h1>
 		<div class="section 2" style="margin-top: 6em;">
 			<div>
 
@@ -159,10 +155,12 @@ font-family: 'KyoboHand';">안구질환</button>
 						alt="...">
 					<div class="card-body">
 
-						<h5 class="card-title" style="text-align: center;">①</h5>
+						<h5 class="card-title"
+							style="text-align: center; font-size: xx-large;">①</h5>
 
 						<br>
-						<p class="card-text">강아지</p>
+						<p class="card-text"
+							style="font-family: 'Katuri'; font-size: xx-large;">강아지</p>
 						<div class="d-flex align-items-center">
 							<div class="flex-shrink-0"></div>
 
@@ -178,10 +176,12 @@ font-family: 'KyoboHand';">안구질환</button>
 						alt="...">
 					<div class="card-body">
 
-						<h5 class="card-title" style="text-align: center;">②</h5>
+						<h5 class="card-title"
+							style="text-align: center; font-size: xx-large;">②</h5>
 
 						<br>
-						<p class="card-text">고양이</p>
+						<p class="card-text"
+							style="font-family: 'Katuri'; font-size: xx-large;">고양이</p>
 						<div class="d-flex align-items-center">
 							<div class="flex-shrink-0"></div>
 
@@ -198,26 +198,30 @@ font-family: 'KyoboHand';">안구질환</button>
 
 
 			<div id="page2" style="display: none">
-				<h1 style="text-align: center;">ⓘ 사진 업로드 시, 주의사항 !</h1>
+				<h1 style="text-align: center; font-family: 'Katuri';">ⓘ 사진 업로드
+					시, 주의사항 !</h1>
 				<div style="text-align: right; margin-right: 4em;">
-					<h2>올바른 예시</h2>
+					<h2 style="font-family: 'Katuri';">올바른 예시</h2>
 					<img alt="..." src="${cpath}/resources/img/O.PNG"
 						style="width: 22%;"> <img alt="..."
 						src="${cpath}/resources/img/O2.PNG" style="width: 21%;"> <br>
 					<br> <br>
-					<h2>잘못된 예시</h2>
+					<h2 style="font-family: 'Katuri';">잘못된 예시</h2>
 					<img alt="..." src="${cpath}/resources/img/X.PNG"
 						style="width: 20%;"> <img alt="..."
 						src="${cpath}/resources/img/X2.PNG" style="width: 21%;">
 
 					<div
 						style="text-align: left; width: 50%; margin: 0%; position: relative; top: -22em; font-size: large;">
-						<p>- 자동 보정 해제 및 촬영시 확대하지 말것</p>
+						<p style="font-family: 'KyoboHand'; font-size: x-large;">- 자동
+							보정 해제 및 촬영시 확대하지 말것</p>
 
 						<br>
-						<p>- 초점이 맞지 않을 경우 재촬영(눈동자에 초점을 맞추도록 함)</p>
+						<p style="font-family: 'KyoboHand'; font-size: x-large;">- 초점이
+							맞지 않을 경우 재촬영(눈동자에 초점을 맞추도록 함)</p>
 						<br>
-						<p>- 강아지의 시선을 돌려 흰자가 찍힐 수 있도록 촬영</p>
+						<p style="font-family: 'KyoboHand'; font-size: x-large;">-
+							강아지의 시선을 돌려 흰자가 찍힐 수 있도록 촬영</p>
 
 
 					</div>
@@ -241,9 +245,10 @@ font-family: 'KyoboHand';">안구질환</button>
 
 						<!-- Modal content-->
 						<form method="post" enctype="multipart/form-data">
-							<div class="modal-content">
-								
-							
+							<div class="modal-content"
+								style="width: 42em; height: fit-content;">
+
+
 								<jsp:include page="peteye_detect_detail.jsp"></jsp:include>
 							</div>
 					</div>
@@ -252,9 +257,9 @@ font-family: 'KyoboHand';">안구질환</button>
 
 			</div>
 			<!--  last page -->
-			
-			
-			
+
+
+
 
 
 			<!-- footer -->
@@ -278,11 +283,12 @@ font-family: 'KyoboHand';">안구질환</button>
 					<div class="col-lg-4">
 						<div class="widget">
 							<h3>Find Us</h3>
-					<div id="map2" style="width: 360px; height: 220px; border: solid 1px;"></div>
-						<ul class="list-unstyled float-start links">
-							<li></li>
+							<div id="map2"
+								style="width: 360px; height: 220px; border: solid 1px;"></div>
+							<ul class="list-unstyled float-start links">
+								<li></li>
 
-						</ul>
+							</ul>
 
 						</div>
 						<!-- /.widget -->
@@ -320,22 +326,20 @@ font-family: 'KyoboHand';">안구질환</button>
 <script src="${cpath}/resources/js/eye.js"></script>
 
 <script type="text/javascript">
+	var container = document.getElementById('map2');
+	var option = {
+		center : new kakao.maps.LatLng(35.1104947, 126.8777619),
+		level : 3
+	};
 
-var container = document.getElementById('map2');
-var option = {
-		 center : new kakao.maps.LatLng(35.1104947, 126.8777619),
-		 level : 3
-};
+	var map2 = new kakao.maps.Map(container, option);
 
- var map2 = new kakao.maps.Map(container, option);
- 
- var markerPosition = new kakao.maps.LatLng(35.1104947, 126.8777619);
- 
- var marker = new kakao.maps.Marker({
-	 position : markerPosition
- });
- 
- marker.setMap(map2);
-	
+	var markerPosition = new kakao.maps.LatLng(35.1104947, 126.8777619);
+
+	var marker = new kakao.maps.Marker({
+		position : markerPosition
+	});
+
+	marker.setMap(map2);
 </script>
 </html>

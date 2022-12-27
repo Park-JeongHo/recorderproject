@@ -51,7 +51,8 @@
 <script
 	src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 <!-- 카카오api -->
-<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=	62582f56480dc12ba65e0f4ebe9c2204&libraries=services"></script>
+<script type="text/javascript"
+	src="//dapi.kakao.com/v2/maps/sdk.js?appkey=	62582f56480dc12ba65e0f4ebe9c2204&libraries=services"></script>
 
 <script type="text/javascript">
 	$(document).ready(() => {
@@ -77,18 +78,16 @@
 
 </script>
 <style type="text/css">
-#btn-head{
-	
-font-size: larger;
-    box-shadow: none;
-    font-family: 'KyoboHand'
+#btn-head {
+	font-size: larger;
+	box-shadow: none;
+	font-family: 'KyoboHand'
 }
-#btn-head:hover{
-	
-background-color: #ff7f50;
-color: white;
-font-family: 'KyoboHand'
-    
+
+#btn-head:hover {
+	background-color: #ff7f50;
+	color: white;
+	font-family: 'KyoboHand'
 }
 </style>
 
@@ -99,21 +98,19 @@ font-family: 'KyoboHand'
 		<div class="divider"></div>
 		<!-- header -->
 		<div class="section 1">
-			<a href="${cpath}/home.do"><img src="${cpath}/resources/img/logo.png"
-				style="width: 100px;"></a>
-			<div class="btn-group"
-				style="padding-left: 20px; padding-top: 70px;">
-				<button type="button" class="btn" id = "btn-head"
+			<a href="${cpath}/home.do"><img
+				src="${cpath}/resources/img/logo.png" style="width: 100px;"></a>
+			<div class="btn-group" style="padding-left: 20px; padding-top: 70px;">
+				<button type="button" class="btn" id="btn-head"
 					onclick="location.href='${cpath}/act.do'">감정분석</button>
-				<button type="button" class="btn" id ="btn-head"
+				<button type="button" class="btn" id="btn-head"
 					onclick="location.href='${cpath}/eye.do'">안구질환</button>
-				<button type="button" class="btn" id ="btn-head"
-					onclick="location.href='${cpath}/dtl.do'" style="background-color: #ff7f50;
-color: white;
-font-family: 'KyoboHand';">상세보기</button>
-				<button type="button" class="btn" id ="btn-head"
+				<button type="button" class="btn" id="btn-head"
+					onclick="location.href='${cpath}/dtl.do'"
+					style="background-color: #ff7f50; color: white; font-family: 'KyoboHand';">상세보기</button>
+				<button type="button" class="btn" id="btn-head"
 					onclick="location.href='${cpath}/brd.do'">커뮤니티</button>
-				<button type="button" class="btn" id ="btn-head"
+				<button type="button" class="btn" id="btn-head"
 					onclick="location.href='${cpath}/aban.do'">유기동물</button>
 			</div>
 			<div class="dropdown" style="float: right; margin-top: 35px;">
@@ -124,98 +121,108 @@ font-family: 'KyoboHand';">상세보기</button>
 						class="dropdown-item" href="${cpath}/logout.do">로그아웃</a>
 				</div>
 			</div>
-			<div class="chip" style="float: right; margin-top: 35px; background: beige;">
+			<div class="chip"
+				style="float: right; margin-top: 35px; background: beige;">
 				<img src="${cpath}/resources/img/pf.png" alt="Contact Person">
 				${m.user_name}님 환영합니다
 			</div>
 		</div>
 		<div class="divider"></div>
-		
+
 		<div class="section 2">
-		<div class="section sec-testimonials">
-		<div class="container">
-			
-			<div class="row mb-5 align-items-center">
+			<div class="section sec-testimonials">
+				<div class="container">
 
-				<div class="col-md-6">
-					<h2 class="font-weight-bold heading text-primary mb-4 mb-md-0" style="font-family: Katuri;
-    font-size: xxx-large;
-    text-align: center;">질병정보를 알아봅시다</h2>
-				</div>
+					<div class="row mb-5 align-items-center">
 
-				
-			</div>
-
-			<form action="${cpath}/dtl.do" method = "post" style="display: -webkit-inline-box;">
-			<div class="input-field col s12" style="
-    display: -webkit-inline-box;
-			">
-				<select name = "type" style="display: block;">
-					<option selected>품종</option>
-					<option value = "개" ${cri.type == "개" ? "selected" : ""}>개</option>
-					<option value = "고양이" ${cri.type == "고양이" ? "selected" : ""}>고양이</option>
-				</select>
-				<%--  <input type = "text" name = "keyword" value = "${cri.keyword}"> --%>
-				<button class = "btn btn-success btn-sm" type = "submit">검색</button>
-			</div>
-			</form>
-			<br>
-			<div class="row">
-				<div class="col-lg-4"></div>
-			</div>
-			<c:forEach var="list" items="${DtlList}">
-			<table class = "table table-striped">
-				<tr>
-					<td width = "500">
-					<div class="testimonial-slider-wrap">
-						<div class="testimonial-slider">
-							<div class="item">
-								<div class="testimonial">
-								<a class = "get" href = "${list.dtl_seq}">
-									<c:if test="${list.dtl_clsfc == 0}">
-									<img src="${cpath}/resources/img/dog.jpg" alt="Image"
-										class="img-fluid rounded-circle w-50 mb-1">
-									</c:if>
-									<c:if test="${list.dtl_clsfc == 1}">
-										<img src="${cpath}/resources/img/cat.jpg" alt="Image"
-										class="img-fluid rounded-circle w-50 mb-1">
-									</c:if>
-								</a>
-								</div>
-							</div>
+						<div class="col-md-6">
+							<h2
+								style="font-family: Katuri; font-size: xxx-large; position: relative; left: 8em; top: 0.5em;">질병정보를
+								알아봅시다</h2>
 						</div>
+
+
 					</div>
-				</td>
-				<td>
-					<h3 class="h5 text-primary mb-4" style="position: relative; top: 60px; font-family: 'KyoboHand';">
-					${list.dtl_title}
-					</h3>
-					<p style = "position: relative; top: 50px; font-family: 'KyoboHand';">주의! 혐오스러울수 있습니다!!</p>
-				</td>
-			</tr>
-			</table>
-			</c:forEach>
-		</div>
-	</div>
-	<!-- 페이징 처리 -->
-    	<ul class="pagination justify-content-center">
-			<c:if test="${AbanPageMaker.prev}">
-				<li class="page-item"><a class="page-link" href="${AbanPageMaker.startPage - 1}">Previous</a></li>
-			</c:if>
-			<c:forEach var = "pageNum" begin="${AbanPageMaker.startPage}" end = "${AbanPageMaker.endPage}">
-				<li class="page-item ${AbanPageMaker.cri.page eq pageNum ? 'active': ''}"><a class="page-link" href="${pageNum}">${pageNum}</a></li>
-			</c:forEach>
-			<c:if test="${AbanPageMaker.next}">
-				<li class="page-item"><a class="page-link" href="${AbanPageMaker.endPage + 1}">Next</a></li>
-			</c:if>
-		</ul>
-		<!-- 페이징처리 끝 -->
-	<form action="${cpath}/dtl.do" method = "post" id = "frm">
-		<input type = "hidden" id = "page" name = "page" value = "${cri.page}">
-		<input type = "hidden" name = "type" value = "${cri.type}">
-		<input type = "hidden" name = "keyword" value = "${cri.keyword}">
-	</form>
-		
+
+					<form action="${cpath}/dtl.do" method="post"
+						style="display: -webkit-inline-box;">
+						<div class="input-field col s12"
+							style="display: -webkit-inline-box;">
+							<select name="type" style="display: block;">
+								<option selected>품종</option>
+								<option value="개" ${cri.type == "개" ? "selected" : ""}>개</option>
+								<option value="고양이" ${cri.type == "고양이" ? "selected" : ""}>고양이</option>
+							</select>
+							<%--  <input type = "text" name = "keyword" value = "${cri.keyword}"> --%>
+							<button class="btn btn-success btn-sm" type="submit"
+								style="height: 3.5em; width: 6em;">검색</button>
+						</div>
+					</form>
+					<br>
+					<div class="row">
+						<div class="col-lg-4"></div>
+					</div>
+					<c:forEach var="list" items="${DtlList}">
+						<table class="table table-striped">
+							<tr>
+								<td width="500">
+									<div class="testimonial-slider-wrap">
+										<div class="testimonial-slider">
+											<div class="item">
+												<div class="testimonial">
+													<a class="get" href="${list.dtl_seq}"> <c:if
+															test="${list.dtl_clsfc == 0}">
+															<img src="${cpath}/resources/img/dog.jpg" alt="Image"
+																class="img-fluid rounded-circle w-50 mb-1"
+																style="border: solid; border-color: white;">
+														</c:if> <c:if test="${list.dtl_clsfc == 1}">
+															<img src="${cpath}/resources/img/cat.jpg" alt="Image"
+																class="img-fluid rounded-circle w-50 mb-1"
+																style="border: solid; border-color: white;">
+														</c:if>
+													</a>
+												</div>
+											</div>
+										</div>
+									</div>
+								</td>
+								<td>
+									<h3
+										style="position: relative; top: 28px; font-family: katuri; font-size: xx-large; color: darkred;">
+										${list.dtl_title}</h3>
+									<p
+										style="position: relative; top: 30px; font-family: 'KyoboHand'; font-size: x-large;">주의!
+										혐오스러울수 있습니다!!</p>
+								</td>
+							</tr>
+						</table>
+					</c:forEach>
+				</div>
+			</div>
+			<!-- 페이징 처리 -->
+			<ul class="pagination justify-content-center">
+				<c:if test="${AbanPageMaker.prev}">
+					<li class="page-item"><a class="page-link"
+						href="${AbanPageMaker.startPage - 1}">Previous</a></li>
+				</c:if>
+				<c:forEach var="pageNum" begin="${AbanPageMaker.startPage}"
+					end="${AbanPageMaker.endPage}">
+					<li
+						class="page-item ${AbanPageMaker.cri.page eq pageNum ? 'active': ''}"><a
+						class="page-link" href="${pageNum}">${pageNum}</a></li>
+				</c:forEach>
+				<c:if test="${AbanPageMaker.next}">
+					<li class="page-item"><a class="page-link"
+						href="${AbanPageMaker.endPage + 1}">Next</a></li>
+				</c:if>
+			</ul>
+			<!-- 페이징처리 끝 -->
+			<form action="${cpath}/dtl.do" method="post" id="frm">
+				<input type="hidden" id="page" name="page" value="${cri.page}">
+				<input type="hidden" name="type" value="${cri.type}"> <input
+					type="hidden" name="keyword" value="${cri.keyword}">
+			</form>
+
 
 		</div>
 
@@ -239,7 +246,8 @@ font-family: 'KyoboHand';">상세보기</button>
 				<div class="col-lg-4">
 					<div class="widget">
 						<h3>Find Us</h3>
-						<div id="map2" style="width: 360px; height: 220px; border: solid 1px;"></div>
+						<div id="map2"
+							style="width: 360px; height: 220px; border: solid 1px;"></div>
 						<ul class="list-unstyled float-start links">
 							<li></li>
 

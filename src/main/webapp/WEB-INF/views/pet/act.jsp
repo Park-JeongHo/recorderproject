@@ -67,26 +67,24 @@
 <script
 	src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 <!-- 카카오api -->
-<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=	62582f56480dc12ba65e0f4ebe9c2204&libraries=services"></script>
+<script type="text/javascript"
+	src="//dapi.kakao.com/v2/maps/sdk.js?appkey=	62582f56480dc12ba65e0f4ebe9c2204&libraries=services"></script>
 <script>
 	
 </script>
 <title>복실복실</title>
 <style type="text/css">
-#btn-head{
-	
-font-size: larger;
-    box-shadow: none;
-    font-family: 'KyoboHand'
-}
-#btn-head:hover{
-	
-background-color: #ff7f50;
-color: white;
-font-family: 'KyoboHand'
-    
+#btn-head {
+	font-size: larger;
+	box-shadow: none;
+	font-family: 'KyoboHand'
 }
 
+#btn-head:hover {
+	background-color: #ff7f50;
+	color: white;
+	font-family: 'KyoboHand'
+}
 </style>
 <body style="background: linear-gradient(to right, #FFAFBD, #ffc3a0);">
 
@@ -96,19 +94,17 @@ font-family: 'KyoboHand'
 		<div class="section 1">
 			<a href="${cpath}/home.do"><img
 				src="${cpath}/resources/img/logo.png" style="width: 100px;"></a>
-			<div class="btn-group"
-				style="padding-left: 20px; padding-top: 70px;">
-				<button type="button" class="btn" id = "btn-head"
-					onclick="location.href='${cpath}/act.do'" style="background-color: #ff7f50;
-color: white;
-font-family: 'KyoboHand';">감정분석</button>
-				<button type="button" class="btn" id ="btn-head"
+			<div class="btn-group" style="padding-left: 20px; padding-top: 70px;">
+				<button type="button" class="btn" id="btn-head"
+					onclick="location.href='${cpath}/act.do'"
+					style="background-color: #ff7f50; color: white; font-family: 'KyoboHand';">감정분석</button>
+				<button type="button" class="btn" id="btn-head"
 					onclick="location.href='${cpath}/eye.do'">안구질환</button>
-				<button type="button" class="btn" id ="btn-head"
+				<button type="button" class="btn" id="btn-head"
 					onclick="location.href='${cpath}/dtl.do'">상세보기</button>
-				<button type="button" class="btn" id ="btn-head"
+				<button type="button" class="btn" id="btn-head"
 					onclick="location.href='${cpath}/brd.do'">커뮤니티</button>
-				<button type="button" class="btn" id ="btn-head"
+				<button type="button" class="btn" id="btn-head"
 					onclick="location.href='${cpath}/aban.do'">유기동물</button>
 			</div>
 			<div class="dropdown" style="float: right; margin-top: 35px;">
@@ -143,9 +139,11 @@ font-family: 'KyoboHand';">감정분석</button>
 					<div class="card-body">
 
 						<h5 class="card-title" style="text-align: center;">①</h5>
-						<p class="card-text" style="font-family: 'KyoboHand';">우리 아이가 무엇을 느끼고 있을까요?</p>
+						<p class="card-text" style="font-family: 'KyoboHand'; font-size: larger;">우리 아이가
+							무엇을 느끼고 있을까요?</p>
 						<br>
-						<p class="card-text" style="font-family: 'KyoboHand';">궁금하시면 영상을 찍어 올려주세요!</p>
+						<p class="card-text" style="font-family: 'KyoboHand'; font-size: larger;">궁금하시면
+							영상을 찍어 올려주세요!</p>
 						<div class="d-flex align-items-center">
 							<div class="flex-shrink-0"></div>
 
@@ -163,9 +161,11 @@ font-family: 'KyoboHand';">감정분석</button>
 					<div class="card-body" style="text-align: center;">
 
 						<h5 class="card-title">②</h5>
-						<p class="card-text" style="font-family: 'KyoboHand';">2000여장의 데이터로 학습된</p>
+						<p class="card-text" style="font-family: 'KyoboHand'; font-size: larger;">2000여장의
+							데이터로 학습된</p>
 						<br>
-						<p class="card-text" style="font-family: 'KyoboHand';">AI가 분석해드립니다!</p>
+						<p class="card-text" style="font-family: 'KyoboHand'; font-size: larger;">AI가
+							분석해드립니다!</p>
 						<div class="d-flex align-items-center">
 							<div class="flex-shrink-0"></div>
 
@@ -183,7 +183,8 @@ font-family: 'KyoboHand';">감정분석</button>
 						<p class="card-text"></p>
 						<br>
 
-						<p class="card-text" style="font-family: 'KyoboHand';">우리아이가 원하는것을 해주세요!</p>
+						<p class="card-text" style="font-family: 'KyoboHand'; font-size: larger;">우리아이가
+							원하는것을 해주세요!</p>
 						<br>
 
 						<div class="d-flex align-items-center">
@@ -203,8 +204,7 @@ font-family: 'KyoboHand';">감정분석</button>
 
 			<div class="wrap">
 				<button class="button" id="hide1"
-					style="position: relative; left: 13em; top: -1em; 
-font-family: 'KyoboHand';">Next</button>
+					style="position: relative; left: 13em; top: -1em; font-family: 'KyoboHand';">Next</button>
 			</div>
 
 
@@ -213,8 +213,8 @@ font-family: 'KyoboHand';">Next</button>
 
 		<!--             페이지 2                                        -->
 		<br>
-		<h1 style="text-align: center; display: none;" id="title">이런 사진은
-			피해주세요!!!</h1>
+		<h1 style="text-align: center; display: none; font-family: 'Katuri';"
+			id="title">이런 사진은 피해주세요!!!</h1>
 
 		<br>
 
@@ -259,11 +259,12 @@ font-family: 'KyoboHand';">Next</button>
 
 					<!-- Modal content-->
 					<form method="post" enctype="multipart/form-data">
-						<div class="modal-content">
-							
+						<div class="modal-content"
+							style="width: 42em; height: fit-content;">
 
-						<jsp:include page="petemotion_detect.jsp"></jsp:include>
-							
+
+							<jsp:include page="petemotion_detect.jsp"></jsp:include>
+
 						</div>
 				</div>
 				</form>
@@ -296,7 +297,8 @@ font-family: 'KyoboHand';">Next</button>
 				<div class="col-lg-4">
 					<div class="widget">
 						<h3>Find Us</h3>
-						<div id="map2" style="width: 360px; height: 220px; border: solid 1px;"></div>
+						<div id="map2"
+							style="width: 360px; height: 220px; border: solid 1px;"></div>
 						<ul class="list-unstyled float-start links">
 							<li></li>
 
@@ -340,22 +342,20 @@ font-family: 'KyoboHand';">Next</button>
 <script src="${cpath}/resources/js/act.js"></script>
 
 <script type="text/javascript">
+	var container = document.getElementById('map2');
+	var option = {
+		center : new kakao.maps.LatLng(35.1104947, 126.8777619),
+		level : 3
+	};
 
-var container = document.getElementById('map2');
-var option = {
-		 center : new kakao.maps.LatLng(35.1104947, 126.8777619),
-		 level : 3
-};
+	var map2 = new kakao.maps.Map(container, option);
 
- var map2 = new kakao.maps.Map(container, option);
- 
- var markerPosition = new kakao.maps.LatLng(35.1104947, 126.8777619);
- 
- var marker = new kakao.maps.Marker({
-	 position : markerPosition
- });
- 
- marker.setMap(map2);
-	
+	var markerPosition = new kakao.maps.LatLng(35.1104947, 126.8777619);
+
+	var marker = new kakao.maps.Marker({
+		position : markerPosition
+	});
+
+	marker.setMap(map2);
 </script>
 </html>
