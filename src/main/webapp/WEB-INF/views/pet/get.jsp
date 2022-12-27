@@ -63,6 +63,21 @@
 
 	});
 </script>
+<style type="text/css">
+#btn-head{
+	
+font-size: larger;
+    box-shadow: none;
+    font-family: 'KyoboHand'
+}
+#btn-head:hover{
+	
+background-color: #ff7f50;
+color: white;
+font-family: 'KyoboHand'
+    
+}
+</style>
 
 <title>복실복실</title>
 </head>
@@ -75,16 +90,18 @@
 			<a href="${cpath}/home.do"><img
 				src="${cpath}/resources/img/logo.png" style="width: 100px;"></a>
 			<div class="btn-group"
-				style="padding-left: 300px; padding-top: 70px;">
-				<button type="button" class="btn"
+				style="padding-left: 20px; padding-top: 70px;">
+				<button type="button" class="btn" id = "btn-head"
 					onclick="location.href='${cpath}/act.do'">감정분석</button>
-				<button type="button" class="btn"
+				<button type="button" class="btn" id ="btn-head"
 					onclick="location.href='${cpath}/eye.do'">안구질환</button>
-				<button type="button" class="btn btn-outline-info active"
-					onclick="location.href='${cpath}/dtl.do'">상세보기</button>
-				<button type="button" class="btn"
+				<button type="button" class="btn" id ="btn-head"
+					onclick="location.href='${cpath}/dtl.do'" style="background-color: #ff7f50;
+color: white;
+font-family: 'KyoboHand';">상세보기</button>
+				<button type="button" class="btn" id ="btn-head"
 					onclick="location.href='${cpath}/brd.do'">커뮤니티</button>
-				<button type="button" class="btn"
+				<button type="button" class="btn" id ="btn-head"
 					onclick="location.href='${cpath}/aban.do'">유기동물</button>
 			</div>
 
@@ -121,7 +138,9 @@
 				<div class="row mb-5 align-items-center">
 
 					<div class="col-md-6">
-						<h2 class="font-weight-bold heading text-primary mb-4 mb-md-0">질환의
+						<h2 class="font-weight-bold heading text-primary mb-4 mb-md-0"  style="font-family: Katuri;
+    font-size: xxx-large;
+    text-align: center;">질환의
 							상세정보를 알아봅시다</h2>
 					</div>
 				</div>
@@ -138,12 +157,12 @@
 									alt="Image" style="width: 20%;border-radius: 130px;">
 
 								<h3 class="h5 text-primary mb-4"
-									style="position: relative; top: 10px;">${dtl.dtl_title}</h3>
+									style="position: relative; top: 10px; font-family: 'KyoboHand';">${dtl.dtl_title}</h3>
 								<blockquote>
-									<p>&ldquo;${dtl.dtl_info}&rdquo;</p>
+									<p style="font-family: 'KyoboHand';">&ldquo;${dtl.dtl_info}&rdquo;</p>
 								</blockquote>
-								<h5>관리 방법</h5>
-								<p class="text-black-50">${dtl.dtl_mgmt}</p>
+								<h5 style="font-family: 'KyoboHand';">관리 방법</h5>
+								<p class="text-black-50" style="font-family: 'KyoboHand';">${dtl.dtl_mgmt}</p>
 							</div>
 							<button class="btn btn-success btn-sm" id="dir">목록</button>
 						</div>

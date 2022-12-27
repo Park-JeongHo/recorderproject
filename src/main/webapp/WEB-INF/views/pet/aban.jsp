@@ -65,7 +65,21 @@ var frm = $("#frm");
 	});
 });
 </script>
-
+<style type="text/css">
+#btn-head{
+	
+font-size: larger;
+    box-shadow: none;
+    font-family: 'KyoboHand'
+}
+#btn-head:hover{
+	
+background-color: #ff7f50;
+color: white;
+font-family: 'KyoboHand'
+    
+}
+</style>
 <title>복실복실</title>
 <body style="background: linear-gradient(to right, #FFAFBD, #ffc3a0);">
 
@@ -76,12 +90,19 @@ var frm = $("#frm");
 			<a href="${cpath}/home.do"><img src="${cpath}/resources/img/logo.png"
 				style="width: 100px;"></a>
 			<div class="btn-group"
-				style="padding-left: 300px; padding-top: 70px;">
-				<button type="button" class="btn" onclick="location.href='${cpath}/act.do'">감정분석</button>
-				<button type="button" class="btn" onclick="location.href='${cpath}/eye.do'">안구질환</button>
-				<button type="button" class="btn" onclick="location.href='${cpath}/dtl.do'">상세보기</button>
-				<button type="button" class="btn" onclick="location.href='${cpath}/brd.do'">커뮤니티</button>
-				<button type="button" class="btn btn-outline-info active" onclick="location.href='${cpath}/aban.do'">유기동물</button>
+				style="padding-left: 20px; padding-top: 70px;">
+				<button type="button" class="btn" id = "btn-head"
+					onclick="location.href='${cpath}/act.do'">감정분석</button>
+				<button type="button" class="btn" id ="btn-head"
+					onclick="location.href='${cpath}/eye.do'">안구질환</button>
+				<button type="button" class="btn" id ="btn-head"
+					onclick="location.href='${cpath}/dtl.do'">상세보기</button>
+				<button type="button" class="btn" id ="btn-head"
+					onclick="location.href='${cpath}/brd.do'">커뮤니티</button>
+				<button type="button" class="btn" id ="btn-head"
+					onclick="location.href='${cpath}/aban.do'" style="background-color: #ff7f50;
+color: white;
+font-family: 'KyoboHand';">유기동물</button>
 			</div>
 			<div class="dropdown" style="float: right; margin-top: 35px;">
 				<button type="button" class="btn btn-info btn-sm dropdown-toggle"
@@ -106,7 +127,9 @@ var frm = $("#frm");
 			<div class="row mb-5 align-items-center">
 
 				<div class="col-md-6">
-					<h2 class="font-weight-bold heading text-primary mb-4 mb-md-0">가족이
+					<h2 class="font-weight-bold heading text-primary mb-4 mb-md-0" style="font-family: Katuri;
+    font-size: xxx-large;
+    text-align: center;">가족이
 						되어주세요</h2>
 				</div>
 
@@ -164,11 +187,11 @@ var frm = $("#frm");
 			<td>
 				<br>
 				<h3 class="h5 text-primary mb-4"
-								style="position: relative; top: 10px;">종류 : ${list.aban_vrty}</h3>
+								style="position: relative; top: 10px; font-family: 'KyoboHand';">종류 : ${list.aban_vrty}</h3>
 							<blockquote>
-								<p>&ldquo;성별 : ${list.aban_gender}.&rdquo;</p>
+								<p style="font-family: 'KyoboHand';">&ldquo;성별 : ${list.aban_gender}.&rdquo;</p>
 							</blockquote>
-							<p class="text-black-50">지역 : ${list.aban_area}</p>
+							<p class="text-black-50" style="font-family: 'KyoboHand';">지역 : ${list.aban_area}</p>
 			</td>
 			
 			</tr>

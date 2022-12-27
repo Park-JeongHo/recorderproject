@@ -72,6 +72,22 @@
 	
 </script>
 <title>복실복실</title>
+<style type="text/css">
+#btn-head{
+	
+font-size: larger;
+    box-shadow: none;
+    font-family: 'KyoboHand'
+}
+#btn-head:hover{
+	
+background-color: #ff7f50;
+color: white;
+font-family: 'KyoboHand'
+    
+}
+
+</style>
 <body style="background: linear-gradient(to right, #FFAFBD, #ffc3a0);">
 
 	<div class="container">
@@ -81,16 +97,18 @@
 			<a href="${cpath}/home.do"><img
 				src="${cpath}/resources/img/logo.png" style="width: 100px;"></a>
 			<div class="btn-group"
-				style="padding-left: 300px; padding-top: 70px;">
-				<button type="button" class="btn btn-outline-info active"
-					onclick="location.href='${cpath}/act.do'">감정분석</button>
-				<button type="button" class="btn"
+				style="padding-left: 20px; padding-top: 70px;">
+				<button type="button" class="btn" id = "btn-head"
+					onclick="location.href='${cpath}/act.do'" style="background-color: #ff7f50;
+color: white;
+font-family: 'KyoboHand';">감정분석</button>
+				<button type="button" class="btn" id ="btn-head"
 					onclick="location.href='${cpath}/eye.do'">안구질환</button>
-				<button type="button" class="btn"
+				<button type="button" class="btn" id ="btn-head"
 					onclick="location.href='${cpath}/dtl.do'">상세보기</button>
-				<button type="button" class="btn"
+				<button type="button" class="btn" id ="btn-head"
 					onclick="location.href='${cpath}/brd.do'">커뮤니티</button>
-				<button type="button" class="btn"
+				<button type="button" class="btn" id ="btn-head"
 					onclick="location.href='${cpath}/aban.do'">유기동물</button>
 			</div>
 			<div class="dropdown" style="float: right; margin-top: 35px;">
@@ -125,9 +143,9 @@
 					<div class="card-body">
 
 						<h5 class="card-title" style="text-align: center;">①</h5>
-						<p class="card-text">우리 아이가 무엇을 느끼고 있을까요?</p>
+						<p class="card-text" style="font-family: 'KyoboHand';">우리 아이가 무엇을 느끼고 있을까요?</p>
 						<br>
-						<p class="card-text">궁금하시면 영상을 찍어 올려주세요!</p>
+						<p class="card-text" style="font-family: 'KyoboHand';">궁금하시면 영상을 찍어 올려주세요!</p>
 						<div class="d-flex align-items-center">
 							<div class="flex-shrink-0"></div>
 
@@ -140,14 +158,14 @@
 				<div
 					class="card shadow p-3 mb-5 bg-body rounded animate__animated animate__backInUp animate__delay-1s"
 					style="width: 21rem; float: left; margin-left: 10%; margin-right: 10%;">
-					<img src="${cpath}/resources/img/act_1.jpg" class="card-img-top"
+					<img src="${cpath}/resources/img/cat2.jpg" class="card-img-top"
 						alt="...">
 					<div class="card-body" style="text-align: center;">
 
 						<h5 class="card-title">②</h5>
-						<p class="card-text">2000여장의 데이터로 학습된</p>
+						<p class="card-text" style="font-family: 'KyoboHand';">2000여장의 데이터로 학습된</p>
 						<br>
-						<p class="card-text">AI가 분석해드립니다!</p>
+						<p class="card-text" style="font-family: 'KyoboHand';">AI가 분석해드립니다!</p>
 						<div class="d-flex align-items-center">
 							<div class="flex-shrink-0"></div>
 
@@ -157,7 +175,7 @@
 				<div
 					class="card shadow p-3 mb-5 bg-body rounded animate__animated animate__backInUp animate__delay-2s"
 					style="width: 25rem; width: 21rem; text-align: center; position: relative; top: 7px;">
-					<img src="${cpath}/resources/img/act_1.jpg" class="card-img-top"
+					<img src="${cpath}/resources/img/cat3.jpg" class="card-img-top"
 						alt="...">
 					<div class="card-body">
 
@@ -165,7 +183,7 @@
 						<p class="card-text"></p>
 						<br>
 
-						<p class="card-text">우리아이가 원하는것을 해주세요!</p>
+						<p class="card-text" style="font-family: 'KyoboHand';">우리아이가 원하는것을 해주세요!</p>
 						<br>
 
 						<div class="d-flex align-items-center">
@@ -185,7 +203,8 @@
 
 			<div class="wrap">
 				<button class="button" id="hide1"
-					style="position: relative; left: 13em; top: -1em;">Next</button>
+					style="position: relative; left: 13em; top: -1em; 
+font-family: 'KyoboHand';">Next</button>
 			</div>
 
 

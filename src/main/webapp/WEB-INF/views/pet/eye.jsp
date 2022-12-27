@@ -88,6 +88,21 @@ $(document).ready(function(){
     
 });
 </script>
+<style type="text/css">
+#btn-head{
+	
+font-size: larger;
+    box-shadow: none;
+    font-family: 'KyoboHand'
+}
+#btn-head:hover{
+	
+background-color: #ff7f50;
+color: white;
+font-family: 'KyoboHand'
+    
+}
+</style>
 <title>복실복실</title>
 <body style="background: linear-gradient(to right, #FFAFBD, #ffc3a0);">
 
@@ -98,16 +113,18 @@ $(document).ready(function(){
 			<a href="${cpath}/home.do"><img
 				src="${cpath}/resources/img/logo.png" style="width: 100px;"></a>
 			<div class="btn-group"
-				style="padding-left: 300px; padding-top: 70px;">
-				<button type="button" class="btn"
+				style="padding-left: 20px; padding-top: 70px;">
+				<button type="button" class="btn" id = "btn-head"
 					onclick="location.href='${cpath}/act.do'">감정분석</button>
-				<button type="button" class="btn btn-outline-info active"
-					onclick="location.href='${cpath}/eye.do'">안구질환</button>
-				<button type="button" class="btn"
+				<button type="button" class="btn" id ="btn-head"
+					onclick="location.href='${cpath}/eye.do'"  style="background-color: #ff7f50;
+color: white;
+font-family: 'KyoboHand';">안구질환</button>
+				<button type="button" class="btn" id ="btn-head"
 					onclick="location.href='${cpath}/dtl.do'">상세보기</button>
-				<button type="button" class="btn"
+				<button type="button" class="btn" id ="btn-head"
 					onclick="location.href='${cpath}/brd.do'">커뮤니티</button>
-				<button type="button" class="btn"
+				<button type="button" class="btn" id ="btn-head"
 					onclick="location.href='${cpath}/aban.do'">유기동물</button>
 			</div>
 			<div class="dropdown" style="float: right; margin-top: 35px;">
@@ -127,7 +144,9 @@ $(document).ready(function(){
 		</div>
 		<div class="divider"></div>
 		<br> <br>
-		<h1 style="text-align: center;" id="eye_title">검사하는 반려 동물의 종은
+		<h1 style="text-align: center; font-family: Katuri;
+    font-size: xxx-large;
+    text-align: center;" id="eye_title">검사하는 반려 동물의 종은
 			무엇입니까?</h1>
 		<div class="section 2" style="margin-top: 6em;">
 			<div>

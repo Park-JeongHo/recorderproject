@@ -106,5 +106,4 @@
 		
 	</div>
 </body>
-<%-- <script src="${cpath}/resources/js/bottom.js"></script> --%>
 </html>

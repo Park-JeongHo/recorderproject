@@ -33,6 +33,8 @@ body{
   flex-direction: column;
   align-items: center;
   padding: 10px 14px;
+
+
 }
 .image-content{
   position: relative;
@@ -86,6 +88,7 @@ body{
   font-size: 14px;
   color: #707070;
   text-align: center;
+
 }
 .button{
   border: none;

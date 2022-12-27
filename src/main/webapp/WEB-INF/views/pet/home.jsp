@@ -54,7 +54,7 @@
 
 
 <title>복실복실</title>
-<body style="background: linear-gradient(to right, #FFAFBD, #ffc3a0);">
+<body style="background: linear-gradient(to right, #FFAFBD, #ffc3a0); ">
 
 	<div class="container">
 		<div class="divider"></div>
@@ -97,7 +97,7 @@
 
 		<div class="divider"></div>
 		<!-- content-1 -->
-		<div style="    font-family: Katuri;
+		<div style="font-family: Katuri;
     font-size: xxx-large;
     text-align: center;">pet news</div>
 		<div class="section 2">

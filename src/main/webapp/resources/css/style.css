@@ -209,10 +209,13 @@
 	
 font-size: larger;
     box-shadow: none;
+    font-family: 'KyoboHand'
 }
 #btn-head:hover{
 	
-
+background-color: #ff7f50;
+color: white;
+font-family: 'KyoboHand'
     
 }
 
