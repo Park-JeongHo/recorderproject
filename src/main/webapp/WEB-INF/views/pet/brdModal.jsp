@@ -8,8 +8,23 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style type="text/css">
+
+#btn-head{
+	
+font-size: larger;
+    box-shadow: none;
+    font-family: 'KyoboHand'
+}
+#btn-head:hover{
+	
+background-color: #ff7f50;
+color: white;
+font-family: 'KyoboHand'
+    
+}
+</style>
 <title>Document</title>
 
 
@@ -73,7 +88,7 @@
 
 
 <div class="text-center">
-  <a href="" class="btn btn-default btn-rounded mb-4" data-toggle="modal" data-target="#modalRegisterForm">글쓰기</a>
+  <a href="" class="btn" id ="btn-head" data-toggle="modal" data-target="#modalRegisterForm">글쓰기</a>
 </div>
 
 

@@ -282,6 +282,8 @@ font-family: 'KyoboHand';">커뮤니티</button>
 				</c:forEach>
 
 			</ul>
+			<jsp:include page="brdModal.jsp"></jsp:include>
+			<br>
 			<!-- 페이징 처리 -->
 			<ul class="pagination justify-content-center">
 
@@ -312,7 +314,7 @@ font-family: 'KyoboHand';">커뮤니티</button>
 
 
 
-			<jsp:include page="brdModal.jsp"></jsp:include>
+			
 
 		</div>
 

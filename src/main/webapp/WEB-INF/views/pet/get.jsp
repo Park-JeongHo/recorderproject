@@ -50,7 +50,8 @@
 <script
 	src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 <!-- 카카오api -->
-<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=	62582f56480dc12ba65e0f4ebe9c2204&libraries=services"></script>
+<script type="text/javascript"
+	src="//dapi.kakao.com/v2/maps/sdk.js?appkey=	62582f56480dc12ba65e0f4ebe9c2204&libraries=services"></script>
 <script type="text/javascript">
 	$(document).ready(function() {
 
@@ -64,18 +65,28 @@
 	});
 </script>
 <style type="text/css">
-#btn-head{
-	
-font-size: larger;
-    box-shadow: none;
-    font-family: 'KyoboHand'
+#btn-head {
+	font-size: larger;
+	box-shadow: none;
+	font-family: 'KyoboHand'
 }
-#btn-head:hover{
-	
-background-color: #ff7f50;
-color: white;
-font-family: 'KyoboHand'
-    
+
+#btn-head:hover {
+	background-color: #ff7f50;
+	color: white;
+	font-family: 'KyoboHand'
+}
+
+#dir {
+	font-size: larger;
+	box-shadow: none;
+	font-family: 'KyoboHand'
+}
+
+#dir:hover {
+	background-color: #ff7f50;
+	color: white;
+	font-family: 'KyoboHand'
 }
 </style>
 
@@ -89,19 +100,17 @@ font-family: 'KyoboHand'
 		<div class="section 1">
 			<a href="${cpath}/home.do"><img
 				src="${cpath}/resources/img/logo.png" style="width: 100px;"></a>
-			<div class="btn-group"
-				style="padding-left: 20px; padding-top: 70px;">
-				<button type="button" class="btn" id = "btn-head"
+			<div class="btn-group" style="padding-left: 20px; padding-top: 70px;">
+				<button type="button" class="btn" id="btn-head"
 					onclick="location.href='${cpath}/act.do'">감정분석</button>
-				<button type="button" class="btn" id ="btn-head"
+				<button type="button" class="btn" id="btn-head"
 					onclick="location.href='${cpath}/eye.do'">안구질환</button>
-				<button type="button" class="btn" id ="btn-head"
-					onclick="location.href='${cpath}/dtl.do'" style="background-color: #ff7f50;
-color: white;
-font-family: 'KyoboHand';">상세보기</button>
-				<button type="button" class="btn" id ="btn-head"
+				<button type="button" class="btn" id="btn-head"
+					onclick="location.href='${cpath}/dtl.do'"
+					style="background-color: #ff7f50; color: white; font-family: 'KyoboHand';">상세보기</button>
+				<button type="button" class="btn" id="btn-head"
 					onclick="location.href='${cpath}/brd.do'">커뮤니티</button>
-				<button type="button" class="btn" id ="btn-head"
+				<button type="button" class="btn" id="btn-head"
 					onclick="location.href='${cpath}/aban.do'">유기동물</button>
 			</div>
 
@@ -134,13 +143,12 @@ font-family: 'KyoboHand';">상세보기</button>
 
 		<div class="section sec-testimonials">
 			<div class="container">
-				
+
 				<div class="row mb-5 align-items-center">
 
 					<div class="col-md-6">
-						<h2 class="font-weight-bold heading text-primary mb-4 mb-md-0"  style="font-family: Katuri;
-    font-size: xxx-large;
-    text-align: center;">질환의
+						<h2
+							style="font-family: Katuri; font-size: xxx-large; position: relative; left: 8em; top: 0.5em;">질환의
 							상세정보를 알아봅시다</h2>
 					</div>
 				</div>
@@ -152,19 +160,21 @@ font-family: 'KyoboHand';">상세보기</button>
 					<div class="testimonial-slider">
 
 						<div class="item">
-							<div class="testimonial">
+							<div class="testimonial" style="position: relative; left: 200px;">
 								<img src="${cpath}/resources/img/disease/${dtl.dtl_seq}.jpg"
-									alt="Image" style="width: 20%;border-radius: 130px;">
+									alt="Image" style="width: 20%; border-radius: 130px;">
 
-								<h3 class="h5 text-primary mb-4"
-									style="position: relative; top: 10px; font-family: 'KyoboHand';">${dtl.dtl_title}</h3>
+								<h3
+									style="position: relative; top: 10px px; font-family: 'KyoboHand'; font-size: xx-large; color: brown;">${dtl.dtl_title}</h3>
 								<blockquote>
-									<p style="font-family: 'KyoboHand';">&ldquo;${dtl.dtl_info}&rdquo;</p>
+									<p style="font-family: 'KyoboHand';font-size: x-large;">&ldquo;${dtl.dtl_info}&rdquo;</p>
 								</blockquote>
-								<h5 style="font-family: 'KyoboHand';">관리 방법</h5>
-								<p class="text-black-50" style="font-family: 'KyoboHand';">${dtl.dtl_mgmt}</p>
+								<h5 style="font-family: 'KyoboHand';
+    font-size: xx-large; color: brown;">관리 방법</h5>
+								<p class="text-black-50" style="font-family: 'KyoboHand';font-size: x-large;">${dtl.dtl_mgmt}</p>
 							</div>
-							<button class="btn btn-success btn-sm" id="dir">목록</button>
+							<button class="btn" id="dir"
+								style="position: relative; left: 610px;">목록으로</button>
 						</div>
 
 						<form id="frm">
@@ -204,7 +214,8 @@ font-family: 'KyoboHand';">상세보기</button>
 				<div class="col-lg-4">
 					<div class="widget">
 						<h3>Find Us</h3>
-						<div id="map2" style="width: 360px; height: 220px; border: solid 1px;"></div>
+						<div id="map2"
+							style="width: 360px; height: 220px; border: solid 1px;"></div>
 						<ul class="list-unstyled float-start links">
 							<li></li>
 
@@ -244,22 +255,20 @@ font-family: 'KyoboHand';">상세보기</button>
 	</div>
 </body>
 <script type="text/javascript">
+	var container = document.getElementById('map2');
+	var option = {
+		center : new kakao.maps.LatLng(35.1104947, 126.8777619),
+		level : 3
+	};
 
-var container = document.getElementById('map2');
-var option = {
-		 center : new kakao.maps.LatLng(35.1104947, 126.8777619),
-		 level : 3
-};
+	var map2 = new kakao.maps.Map(container, option);
 
- var map2 = new kakao.maps.Map(container, option);
- 
- var markerPosition = new kakao.maps.LatLng(35.1104947, 126.8777619);
- 
- var marker = new kakao.maps.Marker({
-	 position : markerPosition
- });
- 
- marker.setMap(map2);
-	
+	var markerPosition = new kakao.maps.LatLng(35.1104947, 126.8777619);
+
+	var marker = new kakao.maps.Marker({
+		position : markerPosition
+	});
+
+	marker.setMap(map2);
 </script>
 </html>

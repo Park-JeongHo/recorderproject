@@ -24,3 +24,5 @@ select * from TBL_BRD
 insert into TBL_BRD(brd_seq,brd_title,brd_content,user_id,brd_date,brd_img)
 values(brd_seq.NEXTVAL,'타이틀1','콘텐츠1','1231',sysdate,'이미지1')
 commit
+
+delete from tbl_brd
